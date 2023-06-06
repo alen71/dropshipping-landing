@@ -1,7 +1,12 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { Prompt } from 'next/font/google'
+import { useRouter } from 'next/router'
 
-import './globals.css'
+import '@/styles/globals.css'
+import { kinetica } from '@/styles/fonts'
+
+import UseLocoScroll from '@/store/useLocoScroll'
+import PageLayout from '@/components/layout/PageLayout'
 
 const prompt = Prompt({
   subsets: ['latin'],
@@ -18,7 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${prompt.variable}`}>{children}</body>
+      <body className={`${prompt.variable} ${kinetica.variable} font-prompt`}>
+        <PageLayout>{children}</PageLayout>
+      </body>
     </html>
   )
 }

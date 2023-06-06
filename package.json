@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.0.1",
+    "@types/locomotive-scroll": "^4.1.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
@@ -23,7 +24,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@types/node": "20.2.5",

@@ -16,8 +16,13 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
+      fontSize: {
+        '3xl': ['2.1875rem', '1'],
+        '5xl': ['2.8125rem', '1']
+      },
       fontFamily: {
-        prompt: ['var(--font-prompt)']
+        prompt: ['var(--font-prompt)'],
+        kinetica: ['var(--font-kinetica)']
       },
       colors: {
         'main-purple': '#A852FF'
