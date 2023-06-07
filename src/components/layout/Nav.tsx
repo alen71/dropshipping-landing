@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect } from 'react'
 import Logo from '../shared/Logo'
 import CtaBtn from '../shared/CtaBtn'
@@ -16,7 +18,11 @@ const Nav = () => {
   }, [locomotiveScroll])
 
   return (
-    <div className="w-full py-12 px-20 sticky top-0">
+    <div
+      data-scroll-sticky
+      data-scroll-target="#loco-container"
+      className="w-full py-12 px-20 sticky top-0"
+    >
       <div className="flex items-center justify-between">
         <Logo />
 
