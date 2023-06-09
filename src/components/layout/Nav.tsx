@@ -12,9 +12,7 @@ const Nav = () => {
   useEffect(() => {
     if (Object.keys(locomotiveScroll).length === 0) return
 
-    locomotiveScroll.on('scroll', (e: ScrollElement) => {
-      console.log(e)
-    })
+    locomotiveScroll.on('scroll', (e: ScrollElement) => {})
   }, [locomotiveScroll])
 
   return (

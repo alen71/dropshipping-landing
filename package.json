@@ -13,6 +13,7 @@
     "@svgr/webpack": "^8.0.1",
     "@types/locomotive-scroll": "^4.1.0",
     "autoprefixer": "10.4.14",
+    "clsx": "^1.2.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "gsap": "^3.11.5",

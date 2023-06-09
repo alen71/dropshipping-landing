@@ -5,6 +5,8 @@
 body {
   background-color: theme(colors.black);
   color: theme(colors.white);
+  font-size: theme(fontSize.4xl);
+  font-weight: 300;
 }
 
 h1 {
