@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <MainSection>
-      <div className="max-w-[78.25rem] flex flex-col">
+      <div className="max-w-[80%] flex flex-col">
         <h1>Počni da prodaješ na domaćem tržištu</h1>
 
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-14 w-full my-12">
@@ -70,6 +70,7 @@ const Hero = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute bottom-5"
+                preserveAspectRatio="none"
               >
                 <path
                   id="svg-chart-line-path"
