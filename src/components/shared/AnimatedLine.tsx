@@ -15,7 +15,7 @@ const AnimatedLine = () => {
           vectorEffect="non-scaling-stroke"
           d="M0 1L1760 0.999846"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
     </div>

@@ -5,7 +5,8 @@
 body {
   background-color: theme(colors.black);
   color: theme(colors.white);
-  font-size: theme(fontSize.4xl);
+  font-size: 1.875rem;
+  line-height: theme(lineHeight.tight);
   font-weight: 300;
 }
 
@@ -25,6 +26,13 @@ h2 {
 h3 {
   font-family: theme(fontFamily.kinetica);
   font-size: theme(fontSize.3xl);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: theme(fontFamily.kinetica);
+  font-size: theme(fontSize.2xl);
   font-weight: 700;
   text-transform: uppercase;
 }

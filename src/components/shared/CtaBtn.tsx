@@ -1,16 +1,25 @@
+import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
 
 type Props = {
   text: string
   href: string
+  footer?: boolean
+  className?: string
 }
 
-const CtaBtn = ({ text, href }: Props) => {
+const CtaBtn = ({ text, href, footer, className }: Props) => {
   return (
     <Link
       href={href}
-      className="rounded-full border-2 border-white text-xl py-2 px-7"
+      className={clsx(
+        `rounded-full border-2 border-white  py-2 px-7 ${className}`,
+        {
+          'text-xl': !footer,
+          'text-3xl': footer
+        }
+      )}
     >
       {text}
     </Link>

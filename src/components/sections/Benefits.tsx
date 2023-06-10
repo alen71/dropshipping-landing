@@ -1,10 +1,13 @@
 import React from 'react'
+import Image from 'next/image'
 
 import MainSection from '../shared/MainSection'
 import AnimatedText from '../shared/AnimatedText'
 import AnimatedLine from '../shared/AnimatedLine'
 
-import Star from '@/assets/purple-star.svg'
+import Star from '@/assets/star.svg'
+
+import manOnLaptop from '/public/images/man-work-on.laptop.png'
 
 const Benefits = () => {
   return (
@@ -29,7 +32,27 @@ const Benefits = () => {
             <li>ali nisi bio siguran kako pustiti reklame.</li>
             <li>ali nisi znao kako da napišeš opis na engleskom.</li>
           </ul>
-          <Star />
+          <div className="text-main-purple">
+            <Star />
+          </div>
+        </div>
+      </div>
+      <div className="mt-56 grid grid-cols-2 items-center gap-24">
+        <div>
+          <Image src={manOnLaptop} alt="man on laptop" />
+        </div>
+        <div className="flex flex-col gap-20 pr-24">
+          <h3>Šta sve dovijate kada kupite ovaj kurs</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+            <br />
+            <br />
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
       </div>
     </MainSection>

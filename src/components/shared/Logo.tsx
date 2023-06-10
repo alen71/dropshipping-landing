@@ -2,9 +2,13 @@ import React from 'react'
 
 import LogoIcon from '@/assets/icons/Logo.svg'
 
-const Logo = () => {
+type Props = {
+  className?: string
+}
+
+const Logo = ({ className }: Props) => {
   return (
-    <div>
+    <div className={className}>
       <LogoIcon />
     </div>
   )

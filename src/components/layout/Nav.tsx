@@ -19,7 +19,7 @@ const Nav = () => {
     <div
       data-scroll-sticky
       data-scroll-target="#loco-container"
-      className="w-full py-12 px-20 sticky top-0"
+      className="w-full py-12 px-20 sticky top-0 z-50"
     >
       <div className="flex items-center justify-between">
         <Logo />
