@@ -14,7 +14,7 @@ const CtaBtn = ({ text, href, footer, className }: Props) => {
     <Link
       href={href}
       className={clsx(
-        `rounded-full border-2 border-white  py-2 px-7 ${className}`,
+        `block w-fit rounded-full border-2 border-white  py-2 px-7 ${className}`,
         {
           'text-xl': !footer,
           'text-3xl': footer

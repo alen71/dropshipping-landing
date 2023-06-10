@@ -22,21 +22,13 @@ const Footer = () => {
         <div className="flex flex-col gap-10 my-24">
           <p className="font-light font-kinetica">Jaroslav Ponjičan</p>
 
-          <div>
-            <CtaBtn
-              href="mailto:jaroslavponjican@gmail.com"
-              text="JAROSLAVPONJIČAN@GMAIL.COM"
-              footer
-              className=""
-            />
-          </div>
-          <div>
-            <CtaBtn
-              href="tel:+381 64 566 6855"
-              text="+381 64 566 6855"
-              footer
-            />
-          </div>
+          <CtaBtn
+            href="mailto:jaroslavponjican@gmail.com"
+            text="JAROSLAVPONJIČAN@GMAIL.COM"
+            footer
+          />
+
+          <CtaBtn href="tel:+381 64 566 6855" text="+381 64 566 6855" footer />
         </div>
 
         <AnimatedLine />
