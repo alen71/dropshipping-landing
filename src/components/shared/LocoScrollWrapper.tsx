@@ -25,12 +25,6 @@ const LocoScrollWrapper = ({ children }: Props) => {
         setLocomotiveScroll(scroll)
       })
     } else if (Object.keys(locomotiveScroll).length > 0) {
-      // router.events.on('routeChangeComplete', () => {
-      //   locomotiveScroll.scrollTo(0, { duration: 0, disableLerp: true })
-      //   setTimeout(() => {
-      //     locomotiveScroll.update()
-      //   }, 100)
-      // })
     }
 
     return () => {
