@@ -14,26 +14,41 @@ import cardBg4 from '/public/images/cards bg/card-4-bg.png'
 
 const cards = [
   {
-    title: 'GET REPEATABLE PROCESSES',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Neograničeno mentorstvo 1 na 1 sa mnom',
+    list: [
+      'Svaki dan - 24/7!  Šta god da ti je potrebno - tu sam da ti pomognem!'
+    ],
     icon: settingIcon,
     bg: cardBg1
   },
   {
-    title: 'GET REUSABLE TEMPLATES',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Doživotni pristup detaljnim video lekcijama - Jednostavno i sažeto',
+    list: [
+      'Svake nedelje ja dodajem nove lekcije i menjam stare ukoliko se nešto promenilo'
+    ],
     icon: arrows,
     bg: cardBg2
   },
   {
-    title: 'GET RECOGNIZED',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Pristup zatvorenoj VIP Facebook grupi',
+    list: [
+      'U ovoj grupi možeš da pronadješ dodatne savete od drugih ljudi koji su već prošli tvoj put i samostalno zaradjuju.',
+      'Da diskutuješ sa njima o raznim temama',
+      'Da prisustvuješ okupljanjima'
+    ],
     icon: message,
     bg: cardBg3
   },
   {
     title: 'GET BITE-SIZED TRAINING',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    list: [
+      'Preporučiću ti dobrog knjigovođu',
+      'Savetovaću te kako da  posluješ legalo i profitablino',
+
+      'Pokazaću ti kako da ostvariš jake kontakte sa domaćim veleprodavcima',
+
+      'Uvešću te u tokove elektronske fiskalizacije i objasniću ti ceo postupak'
+    ],
     icon: rects,
     bg: cardBg4
   }
@@ -43,16 +58,22 @@ const WhatWillYouLearn = () => {
   return (
     <MainSection>
       <div className="text-center max-w-[60rem] mx-auto px-10 mb-36">
-        <h2 className="uppercase">evo šta ćeš naučiti na kursu</h2>
+        <h2 className="uppercase">
+          Šta te sve očekuje kada upišeš obuku, osim dobre zarade naravno ;)
+        </h2>
       </div>
       <div className="grid grid-cols-2 gap-10 mx-auto max-w-[90rem] px-10">
-        {cards.map(({ title, desc, icon, bg }) => (
+        {cards.map(({ title, list, icon, bg }) => (
           <article
             key={title}
             className="flex flex-col p-16 gap-16 rounded-20 relative"
           >
             <p className="text-[3.125rem] leading-tight">{title}</p>
-            <p className="font-light text-2xl">{desc}</p>
+            <ul className="font-light text-2xl flex flex-col gap-4 list-disc">
+              {list.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
 
             <div className="mt-auto">
               <Image src={icon} alt="icon" />

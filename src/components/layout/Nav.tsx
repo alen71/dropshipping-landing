@@ -9,13 +9,18 @@ import CtaBtn from '../shared/CtaBtn'
 
 import UseLocoScroll from '@/store/useLocoScroll'
 
-const Nav = () => {
+type Props = {
+  nativeScroll?: boolean
+}
+
+const Nav = ({ nativeScroll }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScroll, setIsScroll] = useState(false)
   const [isScrollTopOfPage, setIsScrollTopOfPage] = useState(true)
   const { locomotiveScroll } = UseLocoScroll()
 
   useEffect(() => {
+    if (nativeScroll) return
     if (window.innerWidth < 1024) return
 
     if (Object.keys(locomotiveScroll).length === 0) return
@@ -50,42 +55,44 @@ const Nav = () => {
 
       currPageOffset = pageOffset
     })
-  }, [locomotiveScroll])
+  }, [locomotiveScroll, nativeScroll])
 
   useEffect(() => {
-    if (window.innerWidth > 1024) return
+    if (window.innerWidth < 1024 || nativeScroll) {
+      let currPageOffset = 0
+      let timeoutSet: NodeJS.Timeout | null = null
 
-    let currPageOffset = 0
-    let timeoutSet: NodeJS.Timeout | null = null
+      console.log('init')
 
-    window.addEventListener('scroll', () => {
-      const pageOffset = window.scrollY
+      window.addEventListener('scroll', () => {
+        const pageOffset = window.scrollY
 
-      setIsScroll(pageOffset < currPageOffset || pageOffset === 0)
+        setIsScroll(pageOffset < currPageOffset || pageOffset === 0)
 
-      setIsScrollTopOfPage(pageOffset === 0)
+        setIsScrollTopOfPage(pageOffset === 0)
 
-      if (pageOffset > 0 && pageOffset < currPageOffset) {
-        timeoutSet && clearTimeout(timeoutSet)
-        timeoutSet = null
-
-        const timeout = setTimeout(() => {
-          setIsScroll(false)
-        }, 1000)
-        timeoutSet = timeout
-      } else if (
-        pageOffset === 0 ||
-        (pageOffset > currPageOffset && timeoutSet)
-      ) {
-        if (timeoutSet) {
-          clearTimeout(timeoutSet)
+        if (pageOffset > 0 && pageOffset < currPageOffset) {
+          timeoutSet && clearTimeout(timeoutSet)
           timeoutSet = null
-        }
-      }
 
-      currPageOffset = pageOffset
-    })
-  }, [])
+          const timeout = setTimeout(() => {
+            setIsScroll(false)
+          }, 1000)
+          timeoutSet = timeout
+        } else if (
+          pageOffset === 0 ||
+          (pageOffset > currPageOffset && timeoutSet)
+        ) {
+          if (timeoutSet) {
+            clearTimeout(timeoutSet)
+            timeoutSet = null
+          }
+        }
+
+        currPageOffset = pageOffset
+      })
+    }
+  }, [nativeScroll])
 
   return (
     <>
@@ -126,9 +133,8 @@ const Nav = () => {
       <header
         data-scroll-sticky
         data-scroll-target="#loco-container"
-        // className="w-full py-12 px-20 sticky top-0 z-50"
         className={clsx(
-          'sticky left-0 right-0 top-0 h-20 md:h-[8rem] transition-all duration-500 z-[41]',
+          'fixed left-0 right-0 top-0 h-20 md:h-[8rem] transition-all duration-500 z-[41]',
           {
             'translate-y-[-130%]': !isScrollTopOfPage && !isScroll && !isOpen,
             ' h-[6rem] mt-0':

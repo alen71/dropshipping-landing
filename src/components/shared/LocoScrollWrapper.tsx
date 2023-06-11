@@ -3,13 +3,17 @@ import React, { ReactNode, useEffect } from 'react'
 
 import UseLocoScroll from '@/store/useLocoScroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
+import { usePathname, useRouter } from 'next/navigation'
 
 type Props = {
   children: ReactNode
 }
 
 const LocoScrollWrapper = ({ children }: Props) => {
+  const pathname = usePathname()
   const { locomotiveScroll, setLocomotiveScroll } = UseLocoScroll()
+
+  console.log(pathname)
 
   useEffect(() => {
     if (Object.keys(locomotiveScroll).length === 0) {

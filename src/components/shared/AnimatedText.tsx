@@ -70,13 +70,13 @@ const AnimatedText = () => {
   return (
     <div className="animated-text-wrapper relative overflow-hidden">
       <div className="animated-text-boxes relative font-bold">
-        {Array.from({ length: 8 }, (_, i) => (
+        {Array.from({ length: 4 }, (_, i) => (
           <p
             key={i}
-            className="absolute animated-text-box pl-8 uppercase font-kinetica text-7xl"
+            className="absolute animated-text-box pl-8 uppercase font-kinetica text-7xl whitespace-nowrap"
             {...(i === 0 && { ref: boxRef })}
           >
-            Da li si ovo ti?
+            Da li si ovo ti? Ukoliko se prepoznaješ ova obuka je za tebe!
           </p>
         ))}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import LogoIcon from '@/assets/icons/Logo.svg'
+import Link from 'next/link'
 
 type Props = {
   className?: string
@@ -8,9 +9,9 @@ type Props = {
 
 const Logo = ({ className }: Props) => {
   return (
-    <div className={className}>
+    <Link href="/" className={`${className} block w-fit`}>
       <LogoIcon />
-    </div>
+    </Link>
   )
 }
 

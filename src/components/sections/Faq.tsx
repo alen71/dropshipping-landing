@@ -14,31 +14,42 @@ import FaqArrow from '/src/assets/icons/faq-arrow.svg'
 
 const qa = [
   {
-    question: "What's your earliest memory?",
+    question: 'Koliko para mi je potrebno da počnem?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      '- Posle kupovine obuke ($297) bilo bi dobro da imaš još najmanje $200 za reklamiranje i dodatne troškove. (što više to bolje)'
   },
   {
-    question: "What's one of your favorite foods?",
+    question: 'Zašto ti učiš ljude i stvaraš sebi konkurenciju?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      '<span>- Zato što želim još da zaradim? Zašto da ne, imam znanje i iskustvo koje sam spreman da podelim. Ne plašim se konkurencije zato što je moj ecom biznis već uveliko razrađen.</span> <br /> <span> - Takođe sam odlučio da počnem da uvozim svoje proizvode iz Kine. Na taj način ću se izdvajati od “konkurencije”. </span>',
     reverse: true
   },
   {
-    question: 'Who was your favorite teacher and why?',
+    question: 'Koliko vremena će trebati dok počnem da zarađujem?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      '- To zavisi od toga koliko si spreman vremena da uložiš. Ako budeš radio po mojim instrukcijama za mesec dana ćeš sigurno videti svoje prve rezultate. '
   },
   {
-    question: 'Do you have any nicknames?',
+    question: 'Koliko mogu zaraditi?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      '- Zavisi od tvoje ozbiljnosti. Maksimalno je 5-6 hiljada eura mesečno. (ako radiš sam) Za više će ti biti potrebno da zaposliš ljude.',
     reverse: true
   },
   {
-    question: "What's your favorite candy?",
+    question: 'Da li je potrebno da se otvara firma?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      '- U početku ne. Nema smisla otvarati firmu ako još nisi naučio ceo proces. Firma se otvara jednom kada stigneš do 1000+ eura profita. Ali o tom potom. :)'
+  },
+  {
+    question: 'Da li mogu da se priključim obuci ako sam maloletan?',
+    answer:
+      '- Da, možeš. Najmlađi član ima 16 godina i ide mu extra. Firmu će otvoriti na nekoga od svojih roditelja. Bitno je samo da imaš više od 16 godina i da imaš otvoren račun u nekoj od domaćih banaka.',
+    reverse: true
+  },
+  {
+    question: 'Koliko sati dnevno je potrebno da se radi?',
+    answer:
+      '- U proseku 2-3 sata dnevno je idealno. Bitno je da se bude disciplinovan i da radiš konstantno. Gledaš lekcije - radiš - pišeš mi i pitaš me za svaki problem. '
   }
 ]
 
@@ -138,7 +149,7 @@ const Faq = () => {
               })}
               style={{ maxHeight: openedQ === question ? '40rem' : '0' }}
             >
-              <p>{answer}</p>
+              <p dangerouslySetInnerHTML={{ __html: answer }}></p>
             </div>
           </div>
         ))}

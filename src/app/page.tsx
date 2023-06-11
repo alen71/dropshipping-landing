@@ -8,7 +8,6 @@ import WhatWillYouLearn from '@/components/sections/WhatWillYouLearn'
 import Results from '@/components/sections/Results'
 import Lections from '@/components/sections/Lections'
 import Faq from '@/components/sections/Faq'
-import TermsOfService from '@/components/sections/TermsOfService'
 
 export default function Home() {
   return (
@@ -27,8 +26,6 @@ export default function Home() {
         <Lections />
 
         <Faq />
-
-        <TermsOfService />
       </PageLayout>
     </LocoScrollWrapper>
   )

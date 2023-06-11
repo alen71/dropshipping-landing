@@ -8,6 +8,7 @@ import AnimatedLine from '../shared/AnimatedLine'
 
 import footerBg from '/public/images/footer-bg.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -33,12 +34,20 @@ const Footer = () => {
 
         <AnimatedLine />
 
-        <p className="mt-14">
-          Sva prava zadržana. Ⓒ 2023{' '}
-          <a href="https://bluestudio.rs" rel="nofollow" target="_blank">
-            Bluestudio
-          </a>
-        </p>
+        <div className="flex items-center gap-5 mt-14 text-xl">
+          <Link target="_blank" href="/politika-privatnosti">
+            Politika privatnosti
+          </Link>
+          <Link target="_blank" href="/uslovi-koriscenja">
+            Uslovi korišćenja
+          </Link>
+          <p>
+            Sva prava zadržana. Ⓒ 2023{' '}
+            <a href="https://bluestudio.rs" rel="nofollow" target="_blank">
+              Bluestudio
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )
