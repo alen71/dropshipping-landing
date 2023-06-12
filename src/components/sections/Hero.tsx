@@ -1,4 +1,16 @@
+'use client'
+
 import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+import SignInIcon from '@/assets/icons/heroSignInIcon.svg'
+import cart from '/public/images/shopping-basket 1.png'
+
+import CtaBtn from '@/components/shared/CtaBtn'
+import MainSection from '@/components/shared/MainSection'
+
+import bgImage from '/public/images/background-img.png'
 
 const Hero = () => {
   return (
@@ -96,7 +108,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </MainSection>
   )
 }
 

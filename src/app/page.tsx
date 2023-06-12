@@ -1,26 +1,19 @@
-import Image from 'next/image'
+import LocoScrollWrapper from '@/components/shared/LocoScrollWrapper'
+import PageLayout from '@/components/layout/PageLayout'
 
-import Footer from '@/components/layout/Footer'
-import Nav from '@/components/layout/Nav'
 import Hero from '@/components/sections/Hero'
+import Intro from '@/components/sections/Intro'
+import Benefits from '@/components/sections/Benefits'
+import WhatWillYouLearn from '@/components/sections/WhatWillYouLearn'
 
-import bgImage from '/public/images/background-img.png'
-import MainSection from '@/components/shared/MainSection'
+import Lections from '@/components/sections/Lections'
+import Faq from '@/components/sections/Faq'
 
 export default function Home() {
   return (
-    <PageLayout>
-      <Nav />
-
-      <div className="fixed top-0 right-0 w-1/2 z-[-1]">
-        <Image src={bgImage} alt="background-image" />
-      </div>
-
-      <main className="min-h-screen">
-        <MainSection>
-          <Hero />
-        </MainSection>
-      </main>
+    <LocoScrollWrapper>
+      <PageLayout>
+        <Hero />
 
         <Intro />
 

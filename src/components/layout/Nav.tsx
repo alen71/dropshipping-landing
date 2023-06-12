@@ -1,19 +1,98 @@
-import React, { useEffect } from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import clsx from 'clsx'
+
 import Logo from '../shared/Logo'
 import CtaBtn from '../shared/CtaBtn'
-import UseLocoScroll from '@/store/useLocoScroll'
-import { ScrollElement } from 'locomotive-scroll'
 
-const Nav = () => {
+import UseLocoScroll from '@/store/useLocoScroll'
+
+type Props = {
+  nativeScroll?: boolean
+}
+
+const Nav = ({ nativeScroll }: Props) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScroll, setIsScroll] = useState(false)
+  const [isScrollTopOfPage, setIsScrollTopOfPage] = useState(true)
   const { locomotiveScroll } = UseLocoScroll()
 
   useEffect(() => {
+    if (nativeScroll) return
+    if (window.innerWidth < 1024) return
+
     if (Object.keys(locomotiveScroll).length === 0) return
 
-    locomotiveScroll.on('scroll', (e: ScrollElement) => {
-      console.log(e)
+    let currPageOffset = 0
+    let timeoutSet: NodeJS.Timeout | null = null
+
+    locomotiveScroll.on('scroll', (e: any) => {
+      const pageOffset = e.scroll.y
+
+      setIsScroll(pageOffset < currPageOffset || pageOffset === 0)
+
+      setIsScrollTopOfPage(pageOffset === 0)
+
+      if (pageOffset > 0 && pageOffset < currPageOffset) {
+        timeoutSet && clearTimeout(timeoutSet)
+        timeoutSet = null
+
+        const timeout = setTimeout(() => {
+          setIsScroll(false)
+        }, 1000)
+        timeoutSet = timeout
+      } else if (
+        pageOffset === 0 ||
+        (pageOffset > currPageOffset && timeoutSet)
+      ) {
+        if (timeoutSet) {
+          clearTimeout(timeoutSet)
+          timeoutSet = null
+        }
+      }
+
+      currPageOffset = pageOffset
     })
-  }, [locomotiveScroll])
+  }, [locomotiveScroll, nativeScroll])
+
+  useEffect(() => {
+    if (window.innerWidth < 1024 || nativeScroll) {
+      let currPageOffset = 0
+      let timeoutSet: NodeJS.Timeout | null = null
+
+      console.log('init')
+
+      window.addEventListener('scroll', () => {
+        const pageOffset = window.scrollY
+
+        setIsScroll(pageOffset < currPageOffset || pageOffset === 0)
+
+        setIsScrollTopOfPage(pageOffset === 0)
+
+        if (pageOffset > 0 && pageOffset < currPageOffset) {
+          timeoutSet && clearTimeout(timeoutSet)
+          timeoutSet = null
+
+          const timeout = setTimeout(() => {
+            setIsScroll(false)
+          }, 1000)
+          timeoutSet = timeout
+        } else if (
+          pageOffset === 0 ||
+          (pageOffset > currPageOffset && timeoutSet)
+        ) {
+          if (timeoutSet) {
+            clearTimeout(timeoutSet)
+            timeoutSet = null
+          }
+        }
+
+        currPageOffset = pageOffset
+      })
+    }
+  }, [nativeScroll])
 
   return (
     <>

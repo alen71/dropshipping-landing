@@ -26,13 +26,16 @@ module.exports = {
         kinetica: ['var(--font-kinetica)']
       },
       colors: {
-        'main-purple': '#A852FF'
+        'main-purple': '#8000FF'
       },
       borderWidth: {
         1: '0.0625rem'
       },
       height: {
         1: '0.0625rem'
+      },
+      borderRadius: {
+        20: '20px'
       }
     }
   },

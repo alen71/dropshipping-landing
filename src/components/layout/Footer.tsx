@@ -1,4 +1,14 @@
+'use client'
+
 import React from 'react'
+
+import Logo from '../shared/Logo'
+import CtaBtn from '../shared/CtaBtn'
+import AnimatedLine from '../shared/AnimatedLine'
+
+import footerBg from '/public/images/footer-bg.png'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
