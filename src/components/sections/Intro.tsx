@@ -22,7 +22,7 @@ const Intro = () => {
       <div className="flex flex-col 2xl:flex-row gap-14 2xl:gap-36 items-center">
         <div className=" max-w-[40rem]">
           <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
-          <p className="text-30xl leading-tight mt-14 lg:mt-20 mb-10">
+          <p className="xl:text-30xl leading-tight mt-14 lg:mt-20 mb-10">
             Veoma je važno da pogledaš video jer će ti on objasniti da li si ti
             spreman za moju školu! U videu ćeš saznati:
           </p>

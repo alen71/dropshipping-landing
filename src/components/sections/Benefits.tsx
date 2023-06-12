@@ -15,7 +15,7 @@ const Benefits = () => {
       <AnimatedText />
 
       <div className="px-6 sm:px-10 xl:px-20">
-        <p className="text-4xl xl:text-5xl font-light my-14 lg:my-20">
+        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-14 mt-10 sm:my-14 lg:my-20">
           Probao si dropshipping ali:
         </p>
 
@@ -39,11 +39,11 @@ const Benefits = () => {
           <AnimatedLine />
         </div>
 
-        <p className="font-semibold text-30xl xl:text-3xl mb-10">
+        <h3 className="font-semibold mb-10 font-prompt">
           Za dropshipping na DOMAĆEM TRŽIŠTU ništa od ovoga ti nije potrebno!
-        </p>
+        </h3>
 
-        <p className="text-2xl xl:text-30xl mb-5 sm:mb-0">
+        <p className="md:text-2xl xl:text-30xl mb-5 sm:mb-0">
           Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA
         </p>
       </div>
@@ -61,7 +61,7 @@ const Benefits = () => {
             <li>Jednostavnije nego klasičan dropshipping.</li>
             <li>Bez jezičke barijere.</li>
           </ul>
-          <p className="text-2xl font-semibold">
+          <p className="sm:text-2xl font-semibold">
             NE NEĆEŠ POSTATI MILIONER, ALI ĆEŠ IMATI SVOJ SOPSTVENI BIZNIS OD
             KOG DOBRO ZARADJUJEŠ
           </p>
