@@ -5,6 +5,9 @@
 body {
   background-color: theme(colors.black);
   color: theme(colors.white);
+  font-size: theme(fontSize.30xl);
+  line-height: theme(lineHeight.tight);
+  font-weight: 300;
 }
 
 h1 {
@@ -25,4 +28,63 @@ h3 {
   font-size: theme(fontSize.3xl);
   font-weight: 700;
   text-transform: uppercase;
+}
+
+h4 {
+  font-family: theme(fontFamily.kinetica);
+  font-size: theme(fontSize.2xl);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+  body {
+    font-size: theme(fontSize.2xl);
+  }
+  h1 {
+    font-size: theme(fontSize.5xl);
+  }
+
+  h2 {
+    font-size: theme(fontSize.4xl);
+  }
+}
+@media (max-width: 1024px) {
+  h1 {
+    font-size: theme(fontSize.4xl);
+  }
+  h3 {
+    font-size: theme(fontSize.2xl);
+  }
+  h4 {
+    font-size: theme(fontSize.xl);
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: theme(fontSize.xl);
+  }
+
+  h2 {
+    font-size: theme(fontSize.3xl);
+  }
+}
+@media (max-width: 640px) {
+  body {
+    font-size: theme(fontSize.lg);
+  }
+  h1 {
+    font-size: theme(fontSize.30xl);
+  }
+
+  h2 {
+    font-size: theme(fontSize.2xl);
+  }
+
+  h3 {
+    font-size: theme(fontSize.xl);
+  }
+  h4 {
+    font-size: theme(fontSize.lg);
+  }
 }

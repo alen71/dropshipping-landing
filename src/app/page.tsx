@@ -22,7 +22,18 @@ export default function Home() {
         </MainSection>
       </main>
 
-      <Footer />
-    </PageLayout>
+        <Intro />
+
+        <Benefits />
+
+        <WhatWillYouLearn />
+
+        {/* <Results /> */}
+
+        <Lections />
+
+        <Faq />
+      </PageLayout>
+    </LocoScrollWrapper>
   )
 }
