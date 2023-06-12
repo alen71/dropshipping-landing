@@ -73,7 +73,7 @@ const AnimatedText = () => {
         {Array.from({ length: 4 }, (_, i) => (
           <p
             key={i}
-            className="absolute animated-text-box pl-8 uppercase font-kinetica text-7xl whitespace-nowrap"
+            className="absolute animated-text-box pl-8 uppercase font-kinetica text-5xl lg:text-7xl whitespace-nowrap"
             {...(i === 0 && { ref: boxRef })}
           >
             Da li si ovo ti? Ukoliko se prepoznaješ ova obuka je za tebe!

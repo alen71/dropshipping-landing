@@ -142,13 +142,15 @@ const Nav = ({ nativeScroll }: Props) => {
           }
         )}
       >
-        <div className="flex items-center justify-between px-20 h-full">
-          <Logo />
+        <div className="flex items-center justify-between px-6 sm:px-10 xl:px-20 h-full">
+          <div className="scale-[0.8] sm:scale-100 -ml-4 sm:-ml-0">
+            <Logo />
+          </div>
 
           <div className="flex items-center gap-5">
             <div className="w-2 h-2 rounded-full bg-white animate-bounce" />
 
-            <CtaBtn href="/" text="POČNI ODMAH" />
+            <CtaBtn href="/" text="POČNI ODMAH" nav />
           </div>
         </div>
       </header>

@@ -12,15 +12,18 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer data-scroll-section className="px-20 relative pb-20">
-      <div className="absolute right-0 bottom-0 w-1/2">
+    <footer
+      data-scroll-section
+      className="px-6 sm:px-10 xl:px-20 relative pb-10 sm:pb-14 xl:pb-20"
+    >
+      <div className="absolute right-0 bottom-0 w-1/2 z-[-1] 2xl:z-10">
         <Image src={footerBg} alt="footer background image" priority />
       </div>
 
       <div className="max-w-1/2">
-        <Logo className="scale-150 ml-[320px]" />
+        <Logo className="lg:scale-150 lg:ml-[320px]" />
 
-        <div className="flex flex-col gap-10 my-24">
+        <div className="flex flex-col gap-10 my-10 sm:my-14 xl:my-24">
           <p className="font-light font-kinetica">Jaroslav Ponjičan</p>
 
           <CtaBtn
@@ -34,7 +37,7 @@ const Footer = () => {
 
         <AnimatedLine />
 
-        <div className="flex items-center gap-5 mt-14 text-xl">
+        <div className="flex flex-col sm:flex-row items-center gap-5 mt-10 sm:mt-14 text-base lg:text-xl">
           <Link target="_blank" href="/politika-privatnosti">
             Politika privatnosti
           </Link>

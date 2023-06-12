@@ -35,11 +35,11 @@ const Results = () => {
         </p>
       </div>
 
-      <div className="max-w-[90rem] px-10 flex flex-col gap-28 mx-auto">
+      <div className="max-w-[90rem] flex flex-col gap-20 xl:gap-28 mx-auto">
         {reviews.map(({ name, result, desc, video, reverse }, i) => (
           <div
             key={i}
-            className={clsx('grid items-center gap-x-24', {
+            className={clsx('grid items-center gap-x-16 xl:gap-x-24', {
               'grid-cols-[45fr_55fr]': !reverse,
               'grid-cols-[55fr_45fr]': reverse
             })}

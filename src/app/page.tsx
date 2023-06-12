@@ -25,6 +25,16 @@ export default function Home() {
 
         <Lections />
 
+        <Intro />
+
+        <Benefits />
+
+        <WhatWillYouLearn />
+
+        {/* <Results /> */}
+
+        <Lections />
+
         <Faq />
       </PageLayout>
     </LocoScrollWrapper>

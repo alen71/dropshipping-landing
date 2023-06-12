@@ -62,10 +62,12 @@ const Faq = () => {
     <MainSection>
       <div className="flex items-center justify-between gap-10">
         <h2>Frequently asked questions</h2>
-        <Star />
+        <div className="hidden lg:block">
+          <Star />
+        </div>
       </div>
 
-      <div className="my-32">
+      <div className="mb-10 mt-14 sm:my-24 xl:my-32">
         <WavesLine />
       </div>
 
@@ -111,7 +113,7 @@ const Faq = () => {
                   hidden: {},
                   visible: {}
                 }}
-                className="text-3xl sm:text-4xl"
+                className="text-3xl leading-none sm:text-4xl"
               >
                 {question.split('').map((letter, i) => (
                   <motion.span
@@ -128,6 +130,7 @@ const Faq = () => {
                         }
                       }
                     }}
+                    className="font-kinetica font-bold text-lg lg:text-2xl xl:text-30xl"
                   >
                     {letter}
                   </motion.span>
@@ -135,7 +138,7 @@ const Faq = () => {
               </motion.p>
 
               <div
-                className={clsx('duration-300 scale-75 sm:scale-100', {
+                className={clsx('duration-300 scale-75 lg:scale-100', {
                   'rotate-180': openedQ === question
                 })}
               >

@@ -40,7 +40,7 @@ const cards = [
     bg: cardBg3
   },
   {
-    title: 'GET BITE-SIZED TRAINING',
+    title: 'Imaš moju pomoć i savetovanje pri otvaranju firme na Balkanu',
     list: [
       'Preporučiću ti dobrog knjigovođu',
       'Savetovaću te kako da  posluješ legalo i profitablino',
@@ -57,19 +57,21 @@ const cards = [
 const WhatWillYouLearn = () => {
   return (
     <MainSection>
-      <div className="text-center max-w-[60rem] mx-auto px-10 mb-36">
+      <div className="text-center max-w-[90rem] mx-auto px-6 sm:px-10 mb-20 sm:mb-24 lg:mb-36">
         <h2 className="uppercase">
           Šta te sve očekuje kada upišeš obuku, osim dobre zarade naravno ;)
         </h2>
       </div>
-      <div className="grid grid-cols-2 gap-10 mx-auto max-w-[90rem] px-10">
+      <div className="grid md:grid-cols-2 gap-6 xl:gap-10 mx-auto max-w-[90rem]">
         {cards.map(({ title, list, icon, bg }) => (
           <article
             key={title}
-            className="flex flex-col p-16 gap-16 rounded-20 relative"
+            className="flex flex-col p-10 xl:p-16 gap-10 xl:gap-16 rounded-20 relative"
           >
-            <p className="text-[3.125rem] leading-tight">{title}</p>
-            <ul className="font-light text-2xl flex flex-col gap-4 list-disc">
+            <p className="text-30xl lg:text-4xl xl:text-[3.125rem] leading-tight">
+              {title}
+            </p>
+            <ul className="font-light text-base sm:text-xl lg:text-2xl flex flex-col gap-4 list-disc">
               {list.map(item => (
                 <li key={item}>{item}</li>
               ))}

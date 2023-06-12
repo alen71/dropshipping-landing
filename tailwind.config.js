@@ -17,8 +17,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       fontSize: {
-        '3xl': ['2.1875rem', '1'],
-        '5xl': ['2.8125rem', '1']
+        '30xl': ['1.875rem', '1.25'],
+        '3xl': ['2.1875rem', '1.25'],
+        '5xl': ['2.8125rem', '1.25']
       },
       fontFamily: {
         prompt: ['var(--font-prompt)'],

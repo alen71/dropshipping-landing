@@ -35,8 +35,8 @@ const MainSection = ({ px, children }: Props) => {
   return (
     <section
       data-scroll-section
-      className={clsx('mb-56', {
-        'px-20': px === undefined,
+      className={clsx('mb-28 sm:mb-36 md:mb-40 lg:mb-56', {
+        'px-6 sm:px-10 xl:px-20': px === undefined,
         [`px-${px}`]: px
       })}
     >

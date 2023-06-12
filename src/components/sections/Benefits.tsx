@@ -14,13 +14,15 @@ const Benefits = () => {
     <MainSection px={0}>
       <AnimatedText />
 
-      <div className="px-20">
-        <p className="text-5xl font-light my-20">Probao si dropshipping ali:</p>
+      <div className="px-6 sm:px-10 xl:px-20">
+        <p className="text-4xl xl:text-5xl font-light my-14 lg:my-20">
+          Probao si dropshipping ali:
+        </p>
 
         <AnimatedLine />
 
-        <div className="grid grid-cols-[1fr_1fr_auto] mt-20 font-medium gap-10">
-          <ul className="list-disc flex flex-col gap-11 ml-7">
+        <div className="grid lg:grid-cols-[1fr_1fr_auto] mt-14 lg:mt-20 font-medium gap-5 2xl:gap-10 text-lg lg:text-2xl xl:text-30xl justify-center md:justify-start">
+          <ul className="list-disc flex flex-col gap-11 ml-7 ">
             <li>Banovali su ti Facebook account.</li>
             <li>Nisi mogao da namestis Stripe i Paypal.</li>
             <li>Nisi hteo da otvaraš firmu u USA ili GB.</li>
@@ -29,26 +31,28 @@ const Benefits = () => {
             <li>Nisi bio siguran kako pustiti reklame.</li>
             <li>Nisi znao kako da izabereš pravi proizvod.</li>
           </ul>
-          <div className="text-main-purple">
+          <div className="text-main-purple justify-self-center my-20 lg:my-0">
             <Star />
           </div>
         </div>
-        <div className="my-20">
+        <div className="my-14 lg:my-20">
           <AnimatedLine />
         </div>
 
-        <p className="font-semibold text-3xl mb-10">
+        <p className="font-semibold text-30xl xl:text-3xl mb-10">
           Za dropshipping na DOMAĆEM TRŽIŠTU ništa od ovoga ti nije potrebno!
         </p>
 
-        <p>Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA</p>
+        <p className="text-2xl xl:text-30xl mb-5 sm:mb-0">
+          Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA
+        </p>
       </div>
 
-      <div className="mt-56 grid grid-cols-2 items-center gap-24">
-        <div>
+      <div className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24">
+        <div className="max-w-[90%] sm:max-w-[70%] xl:max-w-full">
           <Image src={manOnLaptop} alt="man on laptop" />
         </div>
-        <div className="flex flex-col gap-20 pr-24 font-light">
+        <div className="flex flex-col gap-14 lg:gap-20 xl:pr-24 font-light px-6 sm:px-10 xl:px-0">
           <h3>Koje su prednosti domaćeg dropshippinga?</h3>
           <ul className="list-disc flex flex-col gap-3 list-inside">
             <li>Manja konkurencija.</li>

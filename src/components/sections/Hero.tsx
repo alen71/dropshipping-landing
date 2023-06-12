@@ -20,22 +20,23 @@ const Hero = () => {
           <Image src={bgImage} alt="background-image" />
         </div>
 
-        <div className="max-w-[80%] flex flex-col px-20 pt-40">
+        <div className="2xl:max-w-[90%] flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
           <h1>
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
           </h1>
 
-          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-14 w-full my-12">
-            <p className="font-light text-3xl">
-              Zarađuj za život bez da <br /> ti neko visi nad glavom!
+          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-12 gap-y-10">
+            <p className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2">
+              Zarađuj za život bez da <br className="hidden md:block" /> ti neko
+              visi nad glavom!
             </p>
 
-            <div className="w-full h-[2px] bg-white" />
+            <div className="w-full h-[2px] bg-white col-start-1 md:col-start-2 col-end-3 row-start-2 md:row-start-1 row-end-3 md:row-end-2" />
 
             <div className="w-7 h-7 rounded-full border-2 bg-transparent" />
           </div>
 
-          <div className="flex items-center gap-5 mb-14">
+          <div className="flex items-center gap-5 mb-16 sm:mb-14">
             <CtaBtn text="Prijavi se" href="#" />
 
             <div className="rounded-full border-2 border-white grid place-items-center w-12 h-12">
@@ -43,16 +44,18 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-[25rem_auto] items-center gap-x-20 max-h-[22.625rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] gap-y-10">
             <div className="bg-main-purple relative rounded-2xl h-full">
               <div className="pt-8 px-8 flex flex-col gap-2">
-                <p className="font-bold text-3xl">Ecommerce obuka</p>
-                <p className="text-2xl font-light">
+                <p className="font-bold text-2xl xl:text-3xl">
+                  Ecommerce obuka
+                </p>
+                <p className="text-xl xl:text-2xl font-light">
                   nauči metodu dropshippinga za domaće tržište
                 </p>
               </div>
 
-              <div className="w-[75%] ml-auto">
+              <div className="w-fit lg:w-[75%] ml-auto">
                 <Image
                   src={cart}
                   alt="korpa"
@@ -61,7 +64,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-full w-full border-2 rounded-2xl px-12 py-9 color-white text-xl relative">
+            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
               <div className="flex flex-col justify-between items-end font-light">
                 <p>RSD 200K</p>
                 <p>RSD 100K</p>
@@ -90,10 +93,13 @@ const Hero = () => {
                   />
                 </svg>
                 <div className="h-1 w-full bg-white/50 mt-3" />
-                <div className="h-1 w-full bg-white/50 mt-3" />
-                <div className="w-full grid grid-cols-[1fr_auto] items-center gap-x-9">
-                  <div className="h-1 w-full bg-white/50" />
-                  <p className="">
+                <div className="h-1 w-full bg-white/50 mt-3 absolute top-[46%]" />
+                <div
+                  className="w-full grid grid-cols-[50fr_50fr] 2xl:grid-cols-[1fr_auto] items-end 
+                gap-x-4 sm:gap-x-9"
+                >
+                  <div className="h-1 w-full bg-white/50 mb-2 sm:mb-4" />
+                  <p className="md:text-lg 2xl:text-xl">
                     Ovo će biti tvoji rezultati nakon samo mesec dana
                   </p>
                 </div>
