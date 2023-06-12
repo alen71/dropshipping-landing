@@ -22,12 +22,12 @@ const Benefits = () => {
         <AnimatedLine />
 
         <div className="grid lg:grid-cols-[1fr_1fr_auto] mt-14 lg:mt-20 font-medium gap-5 2xl:gap-10 text-lg lg:text-2xl xl:text-30xl justify-center md:justify-start">
-          <ul className="list-disc flex flex-col gap-11 ml-7 ">
+          <ul className="list-disc flex flex-col gap-6 sm:gap-11 ml-7 ">
             <li>Banovali su ti Facebook account.</li>
             <li>Nisi mogao da namestis Stripe i Paypal.</li>
             <li>Nisi hteo da otvaraš firmu u USA ili GB.</li>
           </ul>
-          <ul className="list-disc flex flex-col gap-11 ml-7">
+          <ul className="list-disc flex flex-col gap-6 sm:gap-11 ml-7">
             <li>Nisi bio siguran kako pustiti reklame.</li>
             <li>Nisi znao kako da izabereš pravi proizvod.</li>
           </ul>

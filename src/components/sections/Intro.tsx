@@ -49,7 +49,7 @@ const Intro = () => {
           </video>
 
           <div
-            className={clsx('absolute duration-200', {
+            className={clsx('absolute duration-200 pointer-events-none', {
               'opacity-0': isPlay,
               'opacity-100': !isPlay
             })}
