@@ -58,7 +58,7 @@ const NavPopup = ({ isOpen, setIsOpen }: Props) => {
               href="#"
               rel="nofollow"
               target="_blank"
-              className="w-fit rounded-full border-2 border-white py-2 px-7 bg-black/40 duration-300 hover:bg-black flex items-center gap-3 text-base sm:text-lg lg:text-2xl cursor-pointer"
+              className="w-fit rounded-full border-2 border-white py-2 px-5 sm:px-7 bg-black/40 duration-300 hover:bg-black flex items-center gap-3 text-sm sm:text-lg lg:text-2xl cursor-pointer"
             >
               <span>Kontaktiraj me na Instagramu</span>
               <InstaIcon />
