@@ -17,7 +17,6 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "framer-motion": "^10.12.16",
-    "gsap": "^3.11.5",
     "locomotive-scroll": "^4.1.4",
     "magnet-mouse": "fluffy-factory/magnet-mouse",
     "next": "13.4.4",

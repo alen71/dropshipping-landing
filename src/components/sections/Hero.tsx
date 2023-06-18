@@ -1,18 +1,26 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 import SignInIcon from '@/assets/icons/heroSignInIcon.svg'
+
 import cart from '/public/images/shopping-basket 1.png'
+import bgImage from '/public/images/background-img.png'
 
 import CtaBtn from '@/components/shared/CtaBtn'
 import MainSection from '@/components/shared/MainSection'
 
-import bgImage from '/public/images/background-img.png'
+import useWindowWidth from '../hooks/UseWindowWidth'
 
 const Hero = () => {
+  const width = useWindowWidth()
+  const underTitleRef = useRef<HTMLDivElement | null>(null)
+  const isUnderTitleRefInView = useInView(underTitleRef, { once: true })
+  const cartContainer = useRef<HTMLDivElement | null>(null)
+  const isCartContainerInView = useInView(cartContainer, { once: true })
+
   return (
     <MainSection px={0}>
       <div className="relative">
@@ -21,17 +29,35 @@ const Hero = () => {
         </div>
 
         <div className="2xl:max-w-[90%] flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 45 }}
+            viewport={{ once: true }}
+          >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
-          </h1>
+          </motion.h1>
 
-          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-12 gap-y-10">
-            <p className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2">
+          <div
+            ref={underTitleRef}
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-12 gap-y-10 overflow-hidden"
+          >
+            <motion.p
+              initial={{ y: -200 }}
+              animate={isUnderTitleRefInView && { y: 0 }}
+              transition={{ type: 'tween', duration: 0.8 }}
+              className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2"
+            >
               Zarađuj za život bez da <br className="hidden md:block" /> ti neko
               visi nad glavom!
-            </p>
+            </motion.p>
 
-            <div className="w-full h-[2px] bg-white col-start-1 md:col-start-2 col-end-3 row-start-2 md:row-start-1 row-end-3 md:row-end-2" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={isUnderTitleRefInView && { scaleX: 1 }}
+              transition={{ type: 'tween', duration: 1 }}
+              className="w-full h-[2px] bg-white col-start-1 md:col-start-2 col-end-3 row-start-2 md:row-start-1 row-end-3 md:row-end-2"
+            />
 
             <div className="w-7 h-7 rounded-full border-2 bg-transparent" />
           </div>
@@ -55,16 +81,25 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="w-fit lg:w-[75%] ml-auto">
-                <Image
-                  src={cart}
-                  alt="korpa"
-                  style={{ objectFit: 'contain' }}
-                />
+              <div
+                ref={cartContainer}
+                className="w-fit lg:w-[75%] ml-auto overflow-hidden"
+              >
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={isCartContainerInView && { x: '0%' }}
+                  transition={{ type: 'spring', stiffness: 40 }}
+                >
+                  <Image
+                    src={cart}
+                    alt="korpa"
+                    style={{ objectFit: 'contain' }}
+                  />
+                </motion.div>
               </div>
             </div>
 
-            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
+            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[18rem] sm:h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-4 sm:py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
               <div className="flex flex-col justify-between items-end font-light">
                 <p>RSD 200K</p>
                 <p>RSD 100K</p>
@@ -74,7 +109,7 @@ const Hero = () => {
               <div className="flex flex-col justify-between relative w-full">
                 <svg
                   width="100%"
-                  height="204"
+                  height={width > 640 ? '204' : '60%'}
                   viewBox="0 0 560 204"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"

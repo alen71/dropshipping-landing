@@ -36,6 +36,10 @@ module.exports = {
       },
       borderRadius: {
         20: '20px'
+      },
+
+      animation: {
+        'spin-slow': 'spin 4s linear infinite'
       }
     }
   },

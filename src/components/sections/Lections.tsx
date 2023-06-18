@@ -1,7 +1,12 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import Image from 'next/image'
+import { motion, useInView } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
+import ParagraphAnimation from '../shared/ParagraphAnimation'
+import AnimatedList from '../shared/LectionList'
 
 import diamond from '/public/images/diamond.png'
 import stone from '/public/images/stone.png'
@@ -71,40 +76,53 @@ const lectionsList = [
 ]
 
 const Lections = () => {
+  const titleContainerRef = useRef<HTMLDivElement | null>(null)
+  const isInView = useInView(titleContainerRef, { once: true })
+
   return (
     <MainSection px={0}>
-      <div className="flex flex-col lg:gap-14 lg:px-10 2xl:px-20">
+      <div className="flex flex-col items-center lg:gap-14 lg:px-10 2xl:px-20">
         {lectionsList.map(({ num, title, list, href, icon, bg, bgMobile }) => (
           <div
             key={num}
-            className="lg:rounded-full py-16 xl:py-20 px-6 sm:px-10 md:px-24 xl:px-28 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-16 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16"
+            className="lg:rounded-full py-16 xl:py-20 px-6 sm:px-10 md:px-24 xl:px-28 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-16 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16 max-w-[110rem]"
           >
             <div>
               <p className="font-kinetica font-light 2xl:text-[2.5rem] leading-tight mb-3">
                 {num}
               </p>
               <p className="font-kinetica font-bold mb-11">{title}</p>
-              <ul className="flex flex-col gap-4 list-disc ml-7">
-                {list.map(item => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+
+              <AnimatedList
+                list={list}
+                className='"flex flex-col gap-4 list-disc ml-7"'
+              />
             </div>
 
             {href && (
-              <a
+              <motion.a
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
                 href={href}
                 className=" w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center"
               >
                 <span className="font-light xl:text-[2.5rem] leading-tight text-center">
                   POČNI ODMAH
                 </span>
-              </a>
+              </motion.a>
             )}
             {icon && (
-              <div className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem]">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] overflow-hidden"
+              >
                 <Image src={icon} alt="icon" />
-              </div>
+              </motion.div>
             )}
 
             <Image
@@ -130,17 +148,29 @@ const Lections = () => {
       </div>
 
       <div className="text-center mt-28 sm:mt-36 md:mt-40 lg:mt-56 mx-auto max-w-[70rem] px-10 sm:px-10 flex flex-col gap-14">
-        <h2 className="uppercase">Moja završna reč</h2>
-        <p>
-          Posle 3 godine rada na domaćem tržištu, odlučio sam da podelim znanje
-          ozbiljnim ljudima koji žele da nauče kako početi svoj online biznis u
-          Srbiji ili na Balkanu. Dosta mi je ovih fake gurua koji ti obećavaju
-          kule i gradove. Ne želim da učim ljude koji misle da će biti milioneri
-          posle ove obuke. U pitanju je normalan i legalan biznis gde TI spajaš
-          ljude sa proizvodima i uzimaš svoju proviziju. Cena jeste visoka ali
-          baš zato što želim da mi se jave samo ozbiljni ljudi koji shvataju da
-          je online zarada jedan od najtežih i najstresnijih poslova.
-        </p>
+        <div ref={titleContainerRef} className="overflow-hidden">
+          <motion.h2
+            initial={{ y: -100, rotate: -10 }}
+            animate={isInView && { y: 0, rotate: 0 }}
+            transition={{ type: 'tween', duration: 0.8 }}
+            className="uppercase"
+          >
+            Moja završna reč
+          </motion.h2>
+        </div>
+        <ParagraphAnimation margin={50}>
+          <p>
+            Posle 3 godine rada na domaćem tržištu, odlučio sam da podelim
+            znanje ozbiljnim ljudima koji žele da nauče kako početi svoj online
+            biznis u Srbiji ili na Balkanu. Dosta mi je ovih fake gurua koji ti
+            obećavaju kule i gradove. Ne želim da učim ljude koji misle da će
+            biti milioneri posle ove obuke. U pitanju je normalan i legalan
+            biznis gde TI spajaš ljude sa proizvodima i uzimaš svoju proviziju.
+            Cena jeste visoka ali baš zato što želim da mi se jave samo ozbiljni
+            ljudi koji shvataju da je online zarada jedan od najtežih i
+            najstresnijih poslova.
+          </p>
+        </ParagraphAnimation>
       </div>
     </MainSection>
   )

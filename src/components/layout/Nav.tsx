@@ -8,6 +8,7 @@ import Logo from '../shared/Logo'
 import CtaBtn from '../shared/CtaBtn'
 
 import UseLocoScroll from '@/store/useLocoScroll'
+import NavPopup from './NavPopup'
 
 type Props = {
   nativeScroll?: boolean
@@ -61,8 +62,6 @@ const Nav = ({ nativeScroll }: Props) => {
     if (window.innerWidth < 1024 || nativeScroll) {
       let currPageOffset = 0
       let timeoutSet: NodeJS.Timeout | null = null
-
-      console.log('init')
 
       window.addEventListener('scroll', () => {
         const pageOffset = window.scrollY
@@ -150,10 +149,31 @@ const Nav = ({ nativeScroll }: Props) => {
           <div className="flex items-center gap-5">
             <div className="w-2 h-2 rounded-full bg-white animate-bounce" />
 
-            <CtaBtn href="/" text="POČNI ODMAH" nav />
+            <div
+              onClick={() => {
+                setIsOpen(true)
+
+                locomotiveScroll.stop()
+
+                document.querySelector('body')?.classList.add('scroll-of')
+                document.querySelector('html')?.classList.add('scroll-of')
+              }}
+            >
+              <CtaBtn text="POČNI ODMAH" nav />
+            </div>
           </div>
         </div>
       </header>
+      <NavPopup
+        isOpen={isOpen}
+        setIsOpen={() => {
+          setIsOpen(false)
+          locomotiveScroll.start()
+
+          document.querySelector('body')?.classList.remove('scroll-of')
+          document.querySelector('html')?.classList.remove('scroll-of')
+        }}
+      />
     </>
   )
 }
