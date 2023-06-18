@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
@@ -61,6 +61,10 @@ const cards = [
 ]
 
 const WhatWillYouLearn = () => {
+  const [isClicked, setIsClicked] = useState('')
+
+  console.log(isClicked)
+
   return (
     <MainSection>
       <div className="text-center max-w-[90rem] mx-auto px-6 sm:px-10 mb-20 sm:mb-24 lg:mb-36">
@@ -74,8 +78,7 @@ const WhatWillYouLearn = () => {
         {cards.map(({ title, list, icon, bg }) => (
           <motion.div
             initial="init"
-            whileHover="flip"
-            whileFocus="flip"
+            animate={isClicked === title ? 'flip' : 'init'}
             variants={{ init: {}, flip: {} }}
             key={title}
             className="relative z-10 h-full "
@@ -88,6 +91,9 @@ const WhatWillYouLearn = () => {
               }}
               className="h-full  rounded-20 relative"
               style={{ transformStyle: 'preserve-3d' }}
+              onClick={() => {
+                isClicked === title ? setIsClicked('') : setIsClicked(title)
+              }}
             >
               <div
                 className="w-full h-full flex flex-col p-10 xl:p-16 gap-10 xl:gap-16 relative"

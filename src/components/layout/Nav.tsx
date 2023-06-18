@@ -142,7 +142,7 @@ const Nav = ({ nativeScroll }: Props) => {
         )}
       >
         <div className="flex items-center justify-between px-6 sm:px-10 xl:px-20 h-full">
-          <div className="scale-[0.8] sm:scale-100 -ml-4 sm:-ml-0">
+          <div className="scale-[0.7] sm:scale-100 -ml-5 sm:-ml-0">
             <Logo />
           </div>
 
