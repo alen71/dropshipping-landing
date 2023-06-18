@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
@@ -11,6 +12,7 @@ import Star from '@/assets/star.svg'
 
 import manOnLaptop from '/public/images/man-work-on.laptop.png'
 import jaroslavOnWall from '/public/images/jaroslav-on-the-wall.jpg'
+
 import AnimatedList from '../shared/LectionList'
 
 const listItems = [
@@ -69,9 +71,16 @@ const Benefits = () => {
       </div>
 
       <div className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24">
-        <div className="max-w-[90%] sm:max-w-[70%] max-h-[50rem] xl:max-w-full overflow-hidden rounded-tr-full rounded-br-full">
+        <motion.div
+          initial={{ x: '-100%' }}
+          whileInView={{ x: '0%' }}
+          transition={{ type: 'spring', stiffness: 30 }}
+          viewport={{ once: true }}
+          className="max-w-[90%] sm:max-w-[70%] max-h-[50rem] xl:max-w-full overflow-hidden rounded-tr-full rounded-br-full"
+        >
           <Image src={jaroslavOnWall} alt="man on laptop" />
-        </div>
+        </motion.div>
+
         <div className="flex flex-col gap-14 lg:gap-20 xl:pr-24 font-light px-6 sm:px-10 xl:px-0">
           <h3>Koje su prednosti domaćeg dropshippinga?</h3>
 

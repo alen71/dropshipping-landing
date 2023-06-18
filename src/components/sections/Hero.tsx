@@ -19,7 +19,10 @@ const Hero = () => {
   const underTitleRef = useRef<HTMLDivElement | null>(null)
   const isUnderTitleRefInView = useInView(underTitleRef, { once: true })
   const cartContainer = useRef<HTMLDivElement | null>(null)
-  const isCartContainerInView = useInView(cartContainer, { once: true })
+  const isCartContainerInView = useInView(cartContainer, {
+    once: true,
+    margin: '0px 0px -150px 0px'
+  })
 
   return (
     <MainSection px={0}>
@@ -65,9 +68,15 @@ const Hero = () => {
           <div className="flex items-center gap-5 mb-16 sm:mb-14">
             <CtaBtn text="Prijavi se" href="#" />
 
-            <div className="rounded-full border-2 border-white grid place-items-center w-12 h-12">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ type: 'spring', stiffness: 90, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="rounded-full border-2 border-white grid place-items-center w-12 h-12"
+            >
               <SignInIcon />
-            </div>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] gap-y-10">

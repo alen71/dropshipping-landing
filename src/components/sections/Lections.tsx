@@ -106,11 +106,12 @@ const Lections = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 href={href}
-                className=" w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center"
               >
-                <span className="font-light xl:text-[2.5rem] leading-tight text-center">
-                  POČNI ODMAH
-                </span>
+                <div className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center duration-200 hover:scale-105">
+                  <span className="font-light xl:text-[2.5rem] leading-tight text-center">
+                    POČNI ODMAH
+                  </span>
+                </div>
               </motion.a>
             )}
             {icon && (

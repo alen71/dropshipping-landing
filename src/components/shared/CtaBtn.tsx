@@ -17,7 +17,7 @@ const CtaBtn = ({ text, href, footer, nav, className }: Props) => {
         <Link
           href={href}
           className={clsx(
-            `block w-fit rounded-full border-2 border-white py-2 px-7 ${className}`,
+            `block w-fit rounded-full border-2 border-white py-2 px-7 duration-300 hover:bg-white hover:text-black ${className}`,
             {
               'text-xs sm:text-base lg:text-xl': nav,
               'text-xl lg:text-30xl': !nav && !footer,
@@ -30,7 +30,7 @@ const CtaBtn = ({ text, href, footer, nav, className }: Props) => {
       ) : (
         <button
           className={clsx(
-            `block w-fit rounded-full border-2 border-white py-2 px-7 ${className}`,
+            `block w-fit rounded-full border-2 border-white py-2 px-7 duration-300 hover:bg-white hover:text-black ${className}`,
             {
               'text-xs sm:text-base lg:text-xl': nav,
               'text-xl lg:text-30xl': !nav && !footer,

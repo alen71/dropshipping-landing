@@ -43,15 +43,16 @@ const Footer = () => {
       data-scroll-section
       className="px-6 sm:px-10 xl:px-20 relative pb-10 sm:pb-14 xl:pb-20"
     >
-      <motion.div
-        initial={{ x: 100, y: 100 }}
-        whileInView={{ x: 0, y: 0 }}
-        transition={{ type: 'spring', stiffness: 30 }}
-        viewport={{ once: true }}
-        className="absolute right-0 bottom-0 w-1/2 z-[-1] 2xl:z-10"
-      >
-        <Image src={footerBg} alt="footer background image" priority />
-      </motion.div>
+      <div className="absolute right-0 bottom-0 w-1/2 z-[-1] 2xl:z-10 overflow-hidden">
+        <motion.div
+          initial={{ x: 100, y: 100 }}
+          whileInView={{ x: 0, y: 0 }}
+          transition={{ type: 'spring', stiffness: 30 }}
+          viewport={{ once: true }}
+        >
+          <Image src={footerBg} alt="footer background image" priority />
+        </motion.div>
+      </div>
 
       <div className="max-w-1/2">
         <Logo className="lg:scale-150 lg:ml-[320px]" />
