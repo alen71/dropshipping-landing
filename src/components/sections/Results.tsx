@@ -42,7 +42,7 @@ const Results = () => {
         </HeadingAnimation>
       </div>
 
-      <div className="max-w-[90rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-10 mx-auto">
+      <div className="max-w-[90rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-10 mx-auto">
         {reviews.map(({ img }) => (
           <div key={img.src} className="w-full h-full">
             <Image
