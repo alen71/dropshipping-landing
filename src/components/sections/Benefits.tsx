@@ -85,7 +85,9 @@ const Benefits = () => {
         </motion.div>
 
         <div className="flex flex-col gap-14 lg:gap-20 xl:pr-24 font-light px-6 sm:px-10 xl:px-0">
-          <h3>Koje su prednosti domaćeg dropshippinga?</h3>
+          <HeadingAnimation>
+            <h3>Koje su prednosti domaćeg dropshippinga?</h3>
+          </HeadingAnimation>
 
           <AnimatedList
             list={listItems}
