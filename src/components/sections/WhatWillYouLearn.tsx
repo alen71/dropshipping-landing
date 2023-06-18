@@ -16,6 +16,7 @@ import cardBg2 from '/public/images/cards bg/card-2-bg.png'
 import cardBg3 from '/public/images/cards bg/card-3-bg.png'
 import cardBg4 from '/public/images/cards bg/card-4-bg.png'
 import AnimatedList from '../shared/LectionList'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const cards = [
   {
@@ -63,9 +64,11 @@ const WhatWillYouLearn = () => {
   return (
     <MainSection>
       <div className="text-center max-w-[90rem] mx-auto px-6 sm:px-10 mb-20 sm:mb-24 lg:mb-36">
-        <h2 className="uppercase">
-          Šta te sve očekuje kada upišeš obuku, osim dobre zarade naravno ;)
-        </h2>
+        <HeadingAnimation>
+          <h2 className="uppercase">
+            Šta te sve očekuje kada upišeš obuku, osim dobre zarade naravno ;)
+          </h2>
+        </HeadingAnimation>
       </div>
       <div className="grid md:grid-cols-2 gap-6 xl:gap-10 mx-auto max-w-[90rem]">
         {cards.map(({ title, list, icon, bg }) => (

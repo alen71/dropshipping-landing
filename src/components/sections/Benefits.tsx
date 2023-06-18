@@ -14,6 +14,7 @@ import manOnLaptop from '/public/images/man-work-on.laptop.png'
 import jaroslavOnWall from '/public/images/jaroslav-on-the-wall.jpg'
 
 import AnimatedList from '../shared/LectionList'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const listItems = [
   'Manja konkurencija.',
@@ -27,7 +28,9 @@ const Benefits = () => {
   return (
     <MainSection px={0}>
       <div className="px-6 sm:px-10 xl:px-20">
-        <h2>Da li si ovo ti? Ukoliko se prepoznaješ ova obuka je za tebe!</h2>
+        <HeadingAnimation>
+          <h2>Da li si ovo ti? Ukoliko se prepoznaješ ova obuka je za tebe!</h2>
+        </HeadingAnimation>
 
         <ParagraphAnimation margin={50}>
           <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-14 mt-10 sm:mb-14 sm:mt-12 lg:mb-20 lg:mt-16">

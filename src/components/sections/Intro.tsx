@@ -10,6 +10,7 @@ import ParagraphAnimation from '../shared/ParagraphAnimation'
 
 import PlayIcon from '@/assets/icons/play-video-btn.svg'
 import AnimatedList from '../shared/LectionList'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const listItems = [
   '- Da li je ovo pravi biznis model za tebe?',
@@ -33,7 +34,9 @@ const Intro = () => {
     <MainSection>
       <div className="flex flex-col 2xl:flex-row gap-14 2xl:gap-36 items-center">
         <div className=" max-w-[40rem]">
-          <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
+          <HeadingAnimation>
+            <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
+          </HeadingAnimation>
 
           <ParagraphAnimation margin={50}>
             <p className="xl:text-30xl leading-tight mt-14 lg:mt-20 mb-10">

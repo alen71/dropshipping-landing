@@ -3,7 +3,7 @@ import PageLayout from '@/components/layout/PageLayout'
 export default function PrivacyPolicy() {
   return (
     <PageLayout nativeScroll>
-      <section className="mt-40 mb-56 max-w-[70rem] mx-auto px-10">
+      <section className="pt-32 sm:pt-36 lg:pt-40 mb-28 sm:mb-36 md:mb-40 lg:mb-56 max-w-[70rem] mx-auto px-6 sm:px-10">
         <h1 className="mb-10">Uslovi korišćenja</h1>
         <p>
           Dobrodošli na ecomskola.com! Molimo vas da pažljivo pročitate ove

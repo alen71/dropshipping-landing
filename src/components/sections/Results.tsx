@@ -10,6 +10,7 @@ import review5 from '/public/images/reviews/placeholder.png'
 import review6 from '/public/images/reviews/placeholder.png'
 import Image from 'next/image'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const reviews = [
   {
@@ -35,15 +36,10 @@ const reviews = [
 const Results = () => {
   return (
     <MainSection>
-      <div className="text-center max-w-5xl px-10 w-full mx-auto flex flex-col gap-14 mb-28">
-        <h2>REVIEWS I REZULTATI</h2>
-
-        <ParagraphAnimation>
-          <p className="text-2xl font-light">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </ParagraphAnimation>
+      <div className="text-center max-w-5xl px-10 w-full mx-auto mb-28">
+        <HeadingAnimation>
+          <h2>REVIEWS I REZULTATI</h2>
+        </HeadingAnimation>
       </div>
 
       <div className="max-w-[90rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-10 mx-auto">

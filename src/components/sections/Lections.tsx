@@ -19,6 +19,7 @@ import bg3 from '/public/images/lectures bg/bg-3.png'
 import bg3Mobile from '/public/images/lectures bg/bg-3-mobile.jpg'
 import bg4 from '/public/images/lectures bg/bg-4.png'
 import bg4Mobile from '/public/images/lectures bg/bg-4-mobile.jpg'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const lectionsList = [
   {
@@ -81,6 +82,12 @@ const Lections = () => {
 
   return (
     <MainSection px={0}>
+      <div className="text-center max-w-5xl px-10 w-full mx-auto mb-28">
+        <HeadingAnimation>
+          <h2>DESKRIPCIJA MODULA</h2>
+        </HeadingAnimation>
+      </div>
+
       <div className="flex flex-col items-center lg:gap-14 lg:px-10 2xl:px-20">
         {lectionsList.map(({ num, title, list, href, icon, bg, bgMobile }) => (
           <div
