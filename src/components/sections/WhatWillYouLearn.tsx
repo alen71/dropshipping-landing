@@ -75,6 +75,7 @@ const WhatWillYouLearn = () => {
           <motion.div
             initial="init"
             whileHover="flip"
+            whileFocus="flip"
             variants={{ init: {}, flip: {} }}
             key={title}
             className="relative z-10 h-full "
