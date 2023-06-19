@@ -15,8 +15,9 @@ import cardBg1 from '/public/images/cards bg/card-1-bg.png'
 import cardBg2 from '/public/images/cards bg/card-2-bg.png'
 import cardBg3 from '/public/images/cards bg/card-3-bg.png'
 import cardBg4 from '/public/images/cards bg/card-4-bg.png'
-import AnimatedList from '../shared/LectionList'
+import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
+import clsx from 'clsx'
 
 const cards = [
   {
@@ -75,7 +76,7 @@ const WhatWillYouLearn = () => {
         </HeadingAnimation>
       </div>
       <div className="grid md:grid-cols-2 gap-6 xl:gap-10 mx-auto max-w-[90rem]">
-        {cards.map(({ title, list, icon, bg }) => (
+        {cards.map(({ title, list, icon, bg }, i) => (
           <motion.div
             initial="init"
             animate={isClicked === title ? 'flip' : 'init'}
@@ -96,7 +97,12 @@ const WhatWillYouLearn = () => {
               }}
             >
               <div
-                className="w-full h-full flex flex-col p-10 xl:p-16 gap-10 xl:gap-16 relative"
+                className={clsx(
+                  'w-full h-full flex flex-col p-6 sm:p-10 xl:p-16 gap-10 xl:gap-16 relative',
+                  {
+                    'bg-black/10': i === 0
+                  }
+                )}
                 style={{ backfaceVisibility: 'hidden' }}
               >
                 <p className="text-30xl lg:text-4xl xl:text-[3.125rem] leading-tight">
@@ -104,7 +110,8 @@ const WhatWillYouLearn = () => {
                 </p>
                 <AnimatedList
                   list={list}
-                  className="font-light text-base sm:text-xl lg:text-2xl flex flex-col gap-4 list-disc"
+                  className="font-light text-base sm:text-xl lg:text-2xl flex flex-col gap-4 list-disc 
+                  ml-4 sm:ml-6"
                 />
 
                 <div className="mt-auto">
@@ -115,7 +122,9 @@ const WhatWillYouLearn = () => {
               </div>
 
               <div
-                className="absolute w-full h-full top-0"
+                className={clsx('absolute w-full h-full top-0', {
+                  'bg-black/10': i === 0
+                })}
                 style={{
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)'

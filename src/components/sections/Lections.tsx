@@ -6,7 +6,7 @@ import { motion, useInView } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
-import AnimatedList from '../shared/LectionList'
+import AnimatedList from '../shared/AnimatedList'
 
 import diamond from '/public/images/diamond.png'
 import stone from '/public/images/stone.png'
@@ -20,6 +20,7 @@ import bg3Mobile from '/public/images/lectures bg/bg-3-mobile.jpg'
 import bg4 from '/public/images/lectures bg/bg-4.png'
 import bg4Mobile from '/public/images/lectures bg/bg-4-mobile.jpg'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
+import clsx from 'clsx'
 
 const lectionsList = [
   {
@@ -89,70 +90,77 @@ const Lections = () => {
       </div>
 
       <div className="flex flex-col items-center lg:gap-14 lg:px-10 2xl:px-20">
-        {lectionsList.map(({ num, title, list, href, icon, bg, bgMobile }) => (
-          <div
-            key={num}
-            className="lg:rounded-full py-16 xl:py-20 px-6 sm:px-10 md:px-24 xl:px-28 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-16 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16 max-w-[110rem]"
-          >
-            <div>
-              <p className="font-kinetica font-light 2xl:text-[2.5rem] leading-tight mb-3">
-                {num}
-              </p>
-              <p className="font-kinetica font-bold mb-11">{title}</p>
+        {lectionsList.map(
+          ({ num, title, list, href, icon, bg, bgMobile }, i) => (
+            <div
+              key={num}
+              className={clsx(
+                'lg:rounded-full py-16 xl:py-20 px-6 sm:px-10 md:px-24 xl:px-28 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-16 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16 max-w-[110rem]',
+                {
+                  'bg-black/10': i === 0
+                }
+              )}
+            >
+              <div>
+                <p className="font-kinetica font-light 2xl:text-[2.5rem] leading-tight mb-3">
+                  {num}
+                </p>
+                <p className="font-kinetica font-bold mb-11">{title}</p>
 
-              <AnimatedList
-                list={list}
-                className='"flex flex-col gap-4 list-disc ml-7"'
+                <AnimatedList
+                  list={list}
+                  className="flex flex-col gap-4 list-disc ml-7 "
+                />
+              </div>
+
+              {href && (
+                <motion.a
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  href={href}
+                >
+                  <div className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center duration-200 hover:scale-105">
+                    <span className="font-light xl:text-[2.5rem] leading-tight text-center">
+                      POČNI ODMAH
+                    </span>
+                  </div>
+                </motion.a>
+              )}
+              {icon && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] overflow-hidden"
+                >
+                  <Image src={icon} alt="icon" />
+                </motion.div>
+              )}
+
+              <Image
+                src={bg}
+                fill
+                alt="background image"
+                quality={30}
+                priority
+                style={{ zIndex: -1 }}
+                className="hidden lg:block"
+              />
+              <Image
+                src={bgMobile}
+                fill
+                alt="background image"
+                quality={30}
+                priority
+                style={{ zIndex: -1 }}
+                className="block lg:hidden"
               />
             </div>
-
-            {href && (
-              <motion.a
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                href={href}
-              >
-                <div className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center duration-200 hover:scale-105">
-                  <span className="font-light xl:text-[2.5rem] leading-tight text-center">
-                    POČNI ODMAH
-                  </span>
-                </div>
-              </motion.a>
-            )}
-            {icon && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] overflow-hidden"
-              >
-                <Image src={icon} alt="icon" />
-              </motion.div>
-            )}
-
-            <Image
-              src={bg}
-              fill
-              alt="background image"
-              quality={30}
-              priority
-              style={{ zIndex: -1 }}
-              className="hidden lg:block"
-            />
-            <Image
-              src={bgMobile}
-              fill
-              alt="background image"
-              quality={30}
-              priority
-              style={{ zIndex: -1 }}
-              className="block lg:hidden"
-            />
-          </div>
-        ))}
+          )
+        )}
       </div>
 
       <div className="text-center mt-28 sm:mt-36 md:mt-40 lg:mt-56 mx-auto max-w-[70rem] px-10 sm:px-10 flex flex-col gap-14">

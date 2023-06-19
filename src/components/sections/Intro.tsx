@@ -9,7 +9,7 @@ import CtaBtn from '../shared/CtaBtn'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
 
 import PlayIcon from '@/assets/icons/play-video-btn.svg'
-import AnimatedList from '../shared/LectionList'
+import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const listItems = [

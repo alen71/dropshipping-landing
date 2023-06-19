@@ -13,7 +13,7 @@ import Star from '@/assets/star.svg'
 import manOnLaptop from '/public/images/man-work-on.laptop.png'
 import jaroslavOnWall from '/public/images/jaroslav-on-the-wall.jpg'
 
-import AnimatedList from '../shared/LectionList'
+import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const listItems = [
