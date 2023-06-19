@@ -109,7 +109,7 @@ const Lections = () => {
 
                 <AnimatedList
                   list={list}
-                  className="flex flex-col gap-4 list-disc ml-7 "
+                  className="flex flex-col gap-4 list-disc ml-4 sm:ml-7 "
                 />
               </div>
 

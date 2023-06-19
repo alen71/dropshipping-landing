@@ -73,7 +73,7 @@ const Hero = () => {
               whileInView={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 90, delay: 0.5 }}
               viewport={{ once: true }}
-              className="rounded-full border-2 border-white grid place-items-center w-12 h-12"
+              className="rounded-full border-2 border-white grid place-items-center w-14 h-14"
             >
               <SignInIcon />
             </motion.div>
