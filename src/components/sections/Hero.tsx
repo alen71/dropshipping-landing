@@ -13,9 +13,10 @@ import CtaBtn from '@/components/shared/CtaBtn'
 import MainSection from '@/components/shared/MainSection'
 
 import useWindowWidth from '../hooks/UseWindowWidth'
+import clsx from 'clsx'
 
 const Hero = () => {
-  const width = useWindowWidth()
+  const { width, height } = useWindowWidth()
   const underTitleRef = useRef<HTMLDivElement | null>(null)
   const isUnderTitleRefInView = useInView(underTitleRef, { once: true })
   const cartContainer = useRef<HTMLDivElement | null>(null)
@@ -26,17 +27,20 @@ const Hero = () => {
 
   return (
     <MainSection px={0}>
-      <div className="relative">
+      <div id="hero" className="relative h-screen flex flex-col items-center">
         <div className="absolute top-0 right-0 w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
 
-        <div className="2xl:max-w-[90%] flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
+        <div className="flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
           <motion.h1
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ type: 'spring', stiffness: 45 }}
             viewport={{ once: true }}
+            className={clsx('', {
+              'text-5xl': height < 1132 && height > 0
+            })}
           >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
           </motion.h1>
@@ -95,7 +99,9 @@ const Hero = () => {
 
               <div
                 ref={cartContainer}
-                className="w-fit lg:w-[75%] ml-auto overflow-hidden"
+                className={clsx('w-fit lg:w-[75%] ml-auto overflow-hidden', {
+                  'lg:w-[50%]': height < 1034 && height > 0
+                })}
               >
                 <motion.div
                   initial={{ x: '100%' }}

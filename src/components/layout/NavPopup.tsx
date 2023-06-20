@@ -40,18 +40,20 @@ const NavPopup = ({ isOpen, setIsOpen }: Props) => {
             }
           }}
           className=" max-w-[84rem] m-auto px-6 sm:px-10 overflow-hidden"
+          onClick={e => e.stopPropagation()}
         >
           <div className="bg-main-purple flex flex-col items-center gap-10 rounded-2xl relative px-6 sm:px-16 lg:px-36 py-16 lg:py-24">
-            <div className="absolute top-6 right-6" onClick={setIsOpen}>
+            <div
+              className="absolute top-6 right-6 cursor-pointer duration-300 hover:scale-110"
+              onClick={setIsOpen}
+            >
               <XIcon />
             </div>
 
-            <h3>PRIJAVISE NA KURS</h3>
+            <h3>PRIJAVI SE NA KURS</h3>
             <p className="max-w-[40rem] text-base sm:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Ukoliko se pronalaziš u gore navedeniom tekstu, prijavi se na kurs
+              i obezbedi sebi bolju budućnost.
             </p>
 
             <a

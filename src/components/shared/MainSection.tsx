@@ -5,6 +5,7 @@ import React, { ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
+  className?: string
   px?:
     | 0
     | 1
@@ -31,11 +32,11 @@ type Props = {
     | 48
 }
 
-const MainSection = ({ px, children }: Props) => {
+const MainSection = ({ px, className, children }: Props) => {
   return (
     <section
       data-scroll-section
-      className={clsx('mb-28 sm:mb-36 md:mb-40 lg:mb-56', {
+      className={clsx(`mb-28 sm:mb-36 md:mb-40 lg:mb-56 ${className}`, {
         'px-6 sm:px-10 xl:px-20': px === undefined,
         [`px-${px}`]: px
       })}
