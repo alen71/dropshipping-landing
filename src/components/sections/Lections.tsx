@@ -92,7 +92,7 @@ const Lections = () => {
         </HeadingAnimation>
       </div>
 
-      <div className="flex flex-col items-center lg:gap-14 lg:px-10 2xl:px-20">
+      <div className="flex flex-col items-center lg:gap-14 lg:px-10 2xl:px-20 overflow-hidden">
         {lectionsList.map((props, i) => (
           <LectionRow key={props.title} {...props} i={i} />
         ))}
