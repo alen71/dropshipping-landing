@@ -27,7 +27,10 @@ const Hero = () => {
 
   return (
     <MainSection px={0}>
-      <div id="hero" className="relative h-screen flex flex-col items-center">
+      <div
+        id="hero"
+        className="relative md:h-screen flex flex-col items-center"
+      >
         <div className="absolute top-0 right-0 w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
@@ -39,7 +42,7 @@ const Hero = () => {
             transition={{ type: 'spring', stiffness: 45 }}
             viewport={{ once: true }}
             className={clsx('', {
-              'text-5xl': height < 1132 && height > 0
+              'lg:text-4xl': height < 1132 && height > 0
             })}
           >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
