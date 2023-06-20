@@ -82,7 +82,7 @@ const WhatWillYouLearn = () => {
             animate={isClicked === title ? 'flip' : 'init'}
             variants={{ init: {}, flip: {} }}
             key={title}
-            className="relative z-10 h-full "
+            className="relative z-10 h-full cursor-pointer"
             style={{ perspective: '1500px' }}
           >
             <motion.article
@@ -130,10 +130,10 @@ const WhatWillYouLearn = () => {
                   transform: 'rotateY(180deg)'
                 }}
               >
-                {/* <div className="w-72 h-72 rounded-full border-2 border-white "></div> */}
-
                 <a
-                  href="#"
+                  href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
+                  rel="nofollow"
+                  target="_blank"
                   className=" w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200 lg:hover:scale-105"
                 >
                   <span className="font-light xl:text-[2.5rem] leading-tight text-center">

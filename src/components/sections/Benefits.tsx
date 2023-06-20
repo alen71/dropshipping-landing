@@ -1,8 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
@@ -25,6 +25,9 @@ const listItems = [
 ]
 
 const Benefits = () => {
+  const imgContainerRef = useRef<HTMLDivElement | null>(null)
+  const isInView = useInView(imgContainerRef, { once: true })
+
   return (
     <MainSection px={0}>
       <div className="px-6 sm:px-10 xl:px-20">
@@ -73,12 +76,14 @@ const Benefits = () => {
         </ParagraphAnimation>
       </div>
 
-      <div className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24">
+      <div
+        ref={imgContainerRef}
+        className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24"
+      >
         <motion.div
           initial={{ x: '-100%' }}
-          whileInView={{ x: '0%' }}
+          animate={isInView && { x: '0%' }}
           transition={{ type: 'spring', stiffness: 30 }}
-          viewport={{ once: true }}
           className="max-w-[90%] sm:max-w-[70%] max-h-[50rem] xl:max-w-full overflow-hidden rounded-tr-full rounded-br-full"
         >
           <Image src={jaroslavOnWall} alt="man on laptop" />

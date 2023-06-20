@@ -51,7 +51,10 @@ const Intro = () => {
           />
 
           <div>
-            <CtaBtn href="#" text="Prijavi se" />
+            <CtaBtn
+              href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
+              text="Prijavi se"
+            />
           </div>
         </div>
         <div className=" w-full h-full relative grid place-items-center rounded-full overflow-hidden">

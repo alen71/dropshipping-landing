@@ -28,7 +28,7 @@ const footerNav = [
   },
   {
     el: (
-      <p>
+      <p className="lg:ml-8">
         Sva prava zadržana. Ⓒ 2023{' '}
         <a href="https://bluestudio.rs" rel="nofollow" target="_blank">
           Bluestudio
@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-1/2">
-        <Logo className="lg:scale-150 lg:ml-[320px]" />
+        <Logo className="lg:scale-150 lg:ml-[40px]" />
 
         <div className="flex flex-col gap-10 my-10 sm:my-14 xl:my-24">
           <p className="font-light font-kinetica">Jaroslav Ponjičan</p>

@@ -16,6 +16,8 @@ const CtaBtn = ({ text, href, footer, nav, className }: Props) => {
       {href ? (
         <Link
           href={href}
+          rel="nofollow"
+          target="_blank"
           className={clsx(
             `block w-fit rounded-full border-2 border-white py-2 px-7 duration-300 hover:bg-white hover:text-black ${className}`,
             {

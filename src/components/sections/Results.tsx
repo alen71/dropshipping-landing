@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import MainSection from '../shared/MainSection'
-import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 import review1 from '/public/images/reviews/placeholder.png'
 import review2 from '/public/images/reviews/placeholder.png'
@@ -9,7 +11,7 @@ import review4 from '/public/images/reviews/placeholder.png'
 import review5 from '/public/images/reviews/placeholder.png'
 import review6 from '/public/images/reviews/placeholder.png'
 import Image from 'next/image'
-import ParagraphAnimation from '../shared/ParagraphAnimation'
+
 import HeadingAnimation from '../shared/HeadingAnimation copy'
 
 const reviews = [
@@ -44,13 +46,20 @@ const Results = () => {
 
       <div className="max-w-[90rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-10 mx-auto">
         {reviews.map(({ img }) => (
-          <div key={img.src} className="w-full h-full">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: 'tween', duration: 0.5 }}
+            viewport={{ once: true }}
+            key={img.src}
+            className="w-full h-full"
+          >
             <Image
               src={img}
               alt="review screenshot"
               style={{ width: '100%' }}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </MainSection>

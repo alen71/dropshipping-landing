@@ -55,7 +55,7 @@ const NavPopup = ({ isOpen, setIsOpen }: Props) => {
             </p>
 
             <a
-              href="#"
+              href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
               rel="nofollow"
               target="_blank"
               className="w-fit rounded-full border-2 border-white py-2 px-5 sm:px-7 bg-black/40 duration-300 hover:bg-black flex items-center gap-3 text-sm sm:text-lg lg:text-2xl cursor-pointer"

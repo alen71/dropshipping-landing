@@ -66,7 +66,10 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center gap-5 mb-16 sm:mb-14">
-            <CtaBtn text="Prijavi se" href="#" />
+            <CtaBtn
+              text="Prijavi se"
+              href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
+            />
 
             <motion.div
               initial={{ scale: 0 }}
@@ -79,7 +82,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] gap-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
             <div className="bg-main-purple relative rounded-2xl h-full">
               <div className="pt-8 px-8 flex flex-col gap-2">
                 <p className="font-bold text-2xl xl:text-3xl">
