@@ -71,7 +71,7 @@ const Faq = () => {
           animate={isInView && { y: 0, rotate: 0 }}
           transition={{ type: 'tween', duration: 0.8 }}
         >
-          Frequently asked questions
+          Odgovori na česta pitanja
         </motion.h2>
         <div className="hidden lg:block animate-spin-slow">
           <Star />

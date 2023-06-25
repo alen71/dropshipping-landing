@@ -70,8 +70,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <CtaBtn
-              href="mailto:jaroslavponjican@gmail.com"
-              text="JAROSLAVPONJIČAN@GMAIL.COM"
+              href="mailto:ecomskola@gmail.com"
+              text="ecomskola@gmail.com"
               footer
             />
           </motion.div>
@@ -86,8 +86,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <CtaBtn
-              href="tel:+381 64 566 6855"
-              text="+381 64 566 6855"
+              href="tel:+381 64 111 14 33"
+              text="+381 64 111 14 33"
               footer
             />
           </motion.div>

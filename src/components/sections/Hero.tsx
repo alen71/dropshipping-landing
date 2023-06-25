@@ -26,16 +26,13 @@ const Hero = () => {
   })
 
   return (
-    <MainSection px={0}>
-      <div
-        id="hero"
-        className="relative md:h-screen flex flex-col items-center"
-      >
+    <MainSection px={0} className="h-screen">
+      <div id="hero" className="relative md:h-full flex   items-center">
         <div className="absolute top-0 right-0 w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
 
-        <div className="flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
+        <div className="flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40 h-fit">
           <motion.h1
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -50,7 +47,7 @@ const Hero = () => {
 
           <div
             ref={underTitleRef}
-            className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-12 gap-y-10 overflow-hidden"
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-10 gap-y-10 overflow-hidden"
           >
             <motion.p
               initial={{ y: -200 }}
@@ -72,21 +69,24 @@ const Hero = () => {
             <div className="w-7 h-7 rounded-full border-2 bg-transparent" />
           </div>
 
-          <div className="flex items-center gap-5 mb-16 sm:mb-14">
-            <CtaBtn
-              text="Prijavi se"
-              href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
-            />
+          <div className="mb-16 sm:mb-14 flex flex-col gap-2">
+            <b className="font-xl">
+              Jednokratno - $297 (cena se uskoro povećava).
+            </b>
 
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ type: 'spring', stiffness: 90, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="rounded-full border-2 border-white grid place-items-center w-12 lg:w-14 h-12 lg:h-14"
-            >
-              <SignInIcon />
-            </motion.div>
+            <div className="flex items-center gap-5">
+              <CtaBtn text="Prijavi se" />
+
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 90, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="rounded-full border-2 border-white grid place-items-center w-12 lg:w-14 h-12 lg:h-14"
+              >
+                <SignInIcon />
+              </motion.div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
@@ -102,8 +102,8 @@ const Hero = () => {
 
               <div
                 ref={cartContainer}
-                className={clsx('w-fit lg:w-[75%] ml-auto overflow-hidden', {
-                  'lg:w-[50%]': height < 1034 && height > 0
+                className={clsx('w-fit lg:w-[60%] ml-auto overflow-hidden', {
+                  'lg:w-[50%]': height < 1134 && height > 0
                 })}
               >
                 <motion.div

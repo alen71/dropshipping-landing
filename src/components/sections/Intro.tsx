@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import clsx from 'clsx'
 
 import MainSection from '../shared/MainSection'
@@ -50,12 +50,7 @@ const Intro = () => {
             className="flex flex-col mb-10 gap-2"
           />
 
-          <div>
-            <CtaBtn
-              href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
-              text="Prijavi se"
-            />
-          </div>
+          <CtaBtn text="Prijavi se" />
         </div>
         <div className=" w-full h-full relative grid place-items-center rounded-full overflow-hidden">
           <motion.video
@@ -69,7 +64,7 @@ const Intro = () => {
             className="w-full h-full cursor-pointer"
             onClick={() => setIsPlay(state => !state)}
           >
-            <source src="/Za Sajt Titl 2.mp4" type="video/mp4" />
+            <source src="/Za sajt spremno.mp4" type="video/mp4" />
           </motion.video>
 
           <div

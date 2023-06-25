@@ -4,19 +4,20 @@ import React from 'react'
 import InstaIcon from '@/assets/icons/instagram-icon.svg'
 import XIcon from '@/assets/icons/xIcon.svg'
 
-type Props = {
-  isOpen: boolean
-  setIsOpen: () => void
-}
+import useTogglePopup from '@/store/useTogglePopup'
+import UseLocoScroll from '@/store/useLocoScroll'
 
-const NavPopup = ({ isOpen, setIsOpen }: Props) => {
+const NavPopup = () => {
+  const { locomotiveScroll } = UseLocoScroll()
+  const { isPopupOpen, setIsPopupOpen } = useTogglePopup()
+
   return (
     <motion.div
       data-scroll-sticky
       data-scroll-target="#loco-container"
       className="fixed w-screen h-screen z-50 "
       initial="hidden"
-      animate={isOpen ? 'visible' : 'hidden'}
+      animate={isPopupOpen ? 'visible' : 'hidden'}
       variants={{
         hidden: { display: 'none', transition: { delay: 0.4 } },
         visible: { display: 'block' }
@@ -28,7 +29,13 @@ const NavPopup = ({ isOpen, setIsOpen }: Props) => {
           visible: { opacity: 1, transition: { duration: 0.3 } }
         }}
         className="grid place-items-center bg-black/80 w-full h-full"
-        onClick={setIsOpen}
+        onClick={() => {
+          setIsPopupOpen(false)
+          locomotiveScroll.start()
+
+          document.querySelector('body')?.classList.remove('scroll-of')
+          document.querySelector('html')?.classList.remove('scroll-of')
+        }}
       >
         <motion.div
           variants={{
@@ -45,15 +52,23 @@ const NavPopup = ({ isOpen, setIsOpen }: Props) => {
           <div className="bg-main-purple flex flex-col items-center gap-10 rounded-2xl relative px-6 sm:px-16 lg:px-36 py-16 lg:py-24">
             <div
               className="absolute top-6 right-6 cursor-pointer duration-300 hover:scale-110"
-              onClick={setIsOpen}
+              onClick={() => {
+                setIsPopupOpen(false)
+                locomotiveScroll.start()
+
+                document.querySelector('body')?.classList.remove('scroll-of')
+                document.querySelector('html')?.classList.remove('scroll-of')
+              }}
             >
               <XIcon />
             </div>
 
             <h3>PRIJAVI SE NA KURS</h3>
-            <p className="max-w-[40rem] text-base sm:text-xl">
-              Ukoliko se pronalaziš u gore navedeniom tekstu, prijavi se na kurs
-              i obezbedi sebi bolju budućnost.
+            <p className="max-w-[40rem] text-base sm:text-xl text-center">
+              Cena obuke je $297, plaća se jednokratno, i imaš lifetime pristup
+              + mentorstvo od mene. Ako si ozbiljan i želiš da počneš da
+              zarađuješ pošalji mi <b>poruku na Instagramu</b> da se dogovorimo
+              oko detalja.
             </p>
 
             <a

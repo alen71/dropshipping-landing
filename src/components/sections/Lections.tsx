@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useRef } from 'react'
-import Image from 'next/image'
+
 import { motion, useInView } from 'framer-motion'
-import clsx from 'clsx'
+
 
 import MainSection from '../shared/MainSection'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
-import AnimatedList from '../shared/AnimatedList'
+
 
 import diamond from '/public/images/diamond.png'
 import stone from '/public/images/stone.png'
@@ -106,7 +106,7 @@ const Lections = () => {
             transition={{ type: 'tween', duration: 0.8 }}
             className="uppercase"
           >
-            Moja završna reč
+            Završna reč
           </motion.h2>
         </div>
         <ParagraphAnimation margin={50}>
