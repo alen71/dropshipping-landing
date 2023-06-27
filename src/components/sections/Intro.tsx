@@ -11,6 +11,7 @@ import ParagraphAnimation from '../shared/ParagraphAnimation'
 import PlayIcon from '@/assets/icons/play-video-btn.svg'
 import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
+import UseLocoScroll from '@/store/useLocoScroll'
 
 const listItems = [
   '- Da li je ovo pravi biznis model za tebe?',
@@ -21,6 +22,8 @@ const listItems = [
 ]
 
 const Intro = () => {
+  const { locomotiveScroll } = UseLocoScroll()
+
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlay, setIsPlay] = useState(false)
 
@@ -60,6 +63,7 @@ const Intro = () => {
               ref={videoRef}
               autoPlay
               playsInline
+              onLoadedData={() => locomotiveScroll.update()}
               className="w-full h-auto object-cover"
             >
               <source src="/Za sajt spremno.mp4" type="video/mp4" />
