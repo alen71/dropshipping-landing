@@ -39,7 +39,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
             className={clsx('', {
-              'lg:text-4xl': window.innerHeight < 1132 && window.innerHeight > 0
+              'lg:text-4xl': height < 1132 && height > 0
             })}
           >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
