@@ -87,9 +87,12 @@ const LectionRow = ({
         )}
 
         <div
-          className={clsx('absolute z-0 inset-0 w-full h-full bg-black/10', {
-            'block ': i === 0
-          })}
+          className={clsx(
+            'absolute z-0 inset-0 w-full h-full bg-black/10 pointer-events-none',
+            {
+              'block ': i === 0
+            }
+          )}
         />
         <Image
           src={bg}
