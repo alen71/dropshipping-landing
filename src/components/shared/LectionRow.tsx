@@ -44,10 +44,7 @@ const LectionRow = ({
         animate={isInvView && { opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
         className={clsx(
-          'lg:rounded-full py-16 xl:py-20 pr-6 sm:pr-10 md:pr-24 xl:pr-28 pl-6 sm:pl-10 md:pl-28 xl:pl-32 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-10 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16 w-full xl:max-w-[110rem]',
-          {
-            'bg-black/10': i === 0
-          }
+          'lg:rounded-full py-16 xl:py-20 pr-6 sm:pr-10 md:pr-24 xl:pr-28 pl-6 sm:pl-10 md:pl-28 xl:pl-32 2xl:p-32 grid lg:grid-cols-[1fr_auto] gap-x-10 2xl:gap-x-36 items-center justify-items-center  relative gap-y-16 w-full xl:max-w-[110rem]'
         )}
       >
         <div>
@@ -89,6 +86,11 @@ const LectionRow = ({
           </motion.div>
         )}
 
+        <div
+          className={clsx('absolute z-0 inset-0 w-full h-full bg-black/10', {
+            'block ': i === 0
+          })}
+        />
         <Image
           src={bg}
           fill
