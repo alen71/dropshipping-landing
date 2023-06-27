@@ -3,6 +3,7 @@ import { Prompt } from 'next/font/google'
 
 import '@/styles/globals.css'
 import { kinetica } from '@/styles/fonts'
+import CursorFollower from '@/components/shared/CursorFollower'
 
 const prompt = Prompt({
   subsets: ['latin'],
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={`${prompt.variable} ${kinetica.variable} font-prompt`}>
-        {children}
+        <CursorFollower>{children}</CursorFollower>
       </body>
     </html>
   )

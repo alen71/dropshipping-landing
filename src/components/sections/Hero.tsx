@@ -36,10 +36,10 @@ const Hero = () => {
           <motion.h1
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 45 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
             className={clsx('', {
-              'lg:text-4xl': height < 1132 && height > 0
+              'lg:text-4xl': window.innerHeight < 1132 && window.innerHeight > 0
             })}
           >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
@@ -70,12 +70,25 @@ const Hero = () => {
           </div>
 
           <div className="mb-16 sm:mb-14 flex flex-col gap-2">
-            <b className="font-xl">
+            <motion.b
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="font-xl"
+            >
               Jednokratno - $297 (cena se uskoro povećava).
-            </b>
+            </motion.b>
 
             <div className="flex items-center gap-5">
-              <CtaBtn text="Prijavi se" />
+              <motion.div
+                initial={{ opacity: 0, x: -200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ type: 'spring', stiffness: 45 }}
+                viewport={{ once: true }}
+              >
+                <CtaBtn text="Prijavi se" />
+              </motion.div>
 
               <motion.div
                 initial={{ scale: 0 }}
