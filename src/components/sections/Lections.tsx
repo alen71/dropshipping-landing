@@ -4,10 +4,8 @@ import React, { useRef } from 'react'
 
 import { motion, useInView } from 'framer-motion'
 
-
 import MainSection from '../shared/MainSection'
 import ParagraphAnimation from '../shared/ParagraphAnimation'
-
 
 import diamond from '/public/images/diamond.png'
 import stone from '/public/images/stone.png'

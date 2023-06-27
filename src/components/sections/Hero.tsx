@@ -13,12 +13,14 @@ import CtaBtn from '@/components/shared/CtaBtn'
 import MainSection from '@/components/shared/MainSection'
 
 import useWindowWidth from '../hooks/UseWindowWidth'
-import clsx from 'clsx'
 
 const Hero = () => {
-  const { width, height } = useWindowWidth()
+  const { width } = useWindowWidth()
+
   const underTitleRef = useRef<HTMLDivElement | null>(null)
   const isUnderTitleRefInView = useInView(underTitleRef, { once: true })
+  const buttonRef = useRef<HTMLDivElement | null>(null)
+  const isButtonRefInView = useInView(buttonRef, { once: true })
   const cartContainer = useRef<HTMLDivElement | null>(null)
   const isCartContainerInView = useInView(cartContainer, {
     once: true,
@@ -26,8 +28,8 @@ const Hero = () => {
   })
 
   return (
-    <MainSection px={0} className="h-screen">
-      <div id="hero" className="relative md:h-full flex   items-center">
+    <MainSection px={0} className="min-h-screen">
+      <div id="hero" className="relative md:h-full flex items-center">
         <div className="absolute top-0 right-0 w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
@@ -38,9 +40,6 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className={clsx('', {
-              'lg:text-4xl': height < 1132 && height > 0
-            })}
           >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
           </motion.h1>
@@ -50,7 +49,7 @@ const Hero = () => {
             className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-10 gap-y-10 overflow-hidden"
           >
             <motion.p
-              initial={{ y: -200 }}
+              initial={{ y: -100 }}
               animate={isUnderTitleRefInView && { y: 0 }}
               transition={{ type: 'tween', duration: 0.8 }}
               className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2"
@@ -75,17 +74,16 @@ const Hero = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="font-xl"
+              className="font-xl mb-10"
             >
               Jednokratno - $297 (cena se uskoro povećava).
             </motion.b>
 
-            <div className="flex items-center gap-5">
+            <div ref={buttonRef} className="flex items-center gap-5">
               <motion.div
                 initial={{ opacity: 0, x: -200 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={isButtonRefInView && { opacity: 1, x: 0 }}
                 transition={{ type: 'spring', stiffness: 45 }}
-                viewport={{ once: true }}
               >
                 <CtaBtn text="Prijavi se" />
               </motion.div>
@@ -102,7 +100,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 max-h-full lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
             <div className="bg-main-purple relative rounded-2xl h-full">
               <div className="pt-8 px-8 flex flex-col gap-2">
                 <p className="font-bold text-2xl xl:text-3xl">
@@ -115,9 +113,7 @@ const Hero = () => {
 
               <div
                 ref={cartContainer}
-                className={clsx('w-fit lg:w-[60%] ml-auto overflow-hidden', {
-                  'lg:w-[50%]': height < 1134 && height > 0
-                })}
+                className="w-fit lg:w-[60%] ml-auto overflow-hidden"
               >
                 <motion.div
                   initial={{ x: '100%' }}

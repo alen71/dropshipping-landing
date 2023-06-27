@@ -33,7 +33,7 @@ const Intro = () => {
   return (
     <MainSection>
       <div className="flex flex-col 2xl:flex-row gap-14 2xl:gap-36 items-center">
-        <div className=" max-w-[40rem]">
+        <div className="max-w-[40rem]">
           <HeadingAnimation>
             <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
           </HeadingAnimation>

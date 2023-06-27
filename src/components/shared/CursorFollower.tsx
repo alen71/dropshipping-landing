@@ -43,9 +43,7 @@ const CursorFollower = ({ children }: Props) => {
 
   return (
     <>
-      <div className="follower w-5 h-5 rounded-full bg-white text-black fixed z-40 pointer-events-none text-xl text-main-black hidden lg:grid place-items-center overflow-hidden font-light uppercase">
-        Click
-      </div>
+      <div className="follower rounded-full bg-white text-black fixed z-40 pointer-events-none text-xl text-main-black hidden lg:grid place-items-center overflow-hidden font-light uppercase" />
 
       {children}
     </>
