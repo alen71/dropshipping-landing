@@ -94,6 +94,7 @@ const LectionRow = ({
             }
           )}
         />
+
         <Image
           src={bg}
           fill
