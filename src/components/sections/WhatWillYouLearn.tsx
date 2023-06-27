@@ -128,6 +128,7 @@ const WhatWillYouLearn = () => {
                   <Image
                     fill
                     src={bg}
+                    quality={100}
                     alt="background"
                     style={{ zIndex: -1 }}
                   />
@@ -154,6 +155,7 @@ const WhatWillYouLearn = () => {
                   <Image
                     fill
                     src={bg}
+                    quality={100}
                     alt="background"
                     style={{ zIndex: -1 }}
                   />
