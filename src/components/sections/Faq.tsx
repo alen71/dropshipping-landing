@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
 
@@ -54,15 +54,26 @@ const qa = [
 ]
 
 const Faq = () => {
+  const titleContainerRef = useRef<HTMLDivElement | null>(null)
+  const isInView = useInView(titleContainerRef, { once: true })
   const { locomotiveScroll } = UseLocoScroll()
 
   const [openedQ, setOpenedQ] = useState<string | null>(null)
 
   return (
     <MainSection>
-      <div className="flex items-center justify-between gap-10">
-        <h2>Frequently asked questions</h2>
-        <div className="hidden lg:block">
+      <div
+        ref={titleContainerRef}
+        className="flex items-center justify-between gap-10 overflow-hidden"
+      >
+        <motion.h2
+          initial={{ y: -200, rotate: -10 }}
+          animate={isInView && { y: 0, rotate: 0 }}
+          transition={{ type: 'tween', duration: 0.8 }}
+        >
+          Odgovori na česta pitanja
+        </motion.h2>
+        <div className="hidden lg:block animate-spin-slow">
           <Star />
         </div>
       </div>

@@ -1,50 +1,108 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 import SignInIcon from '@/assets/icons/heroSignInIcon.svg'
+
 import cart from '/public/images/shopping-basket 1.png'
+import bgImage from '/public/images/background-img.png'
 
 import CtaBtn from '@/components/shared/CtaBtn'
 import MainSection from '@/components/shared/MainSection'
 
-import bgImage from '/public/images/background-img.png'
+import useWindowWidth from '../hooks/UseWindowWidth'
+import clsx from 'clsx'
 
 const Hero = () => {
+  const { width, height } = useWindowWidth()
+  const underTitleRef = useRef<HTMLDivElement | null>(null)
+  const isUnderTitleRefInView = useInView(underTitleRef, { once: true })
+  const cartContainer = useRef<HTMLDivElement | null>(null)
+  const isCartContainerInView = useInView(cartContainer, {
+    once: true,
+    margin: '0px 0px -150px 0px'
+  })
+
   return (
-    <MainSection px={0}>
-      <div className="relative">
+    <MainSection px={0} className="h-screen">
+      <div id="hero" className="relative md:h-full flex   items-center">
         <div className="absolute top-0 right-0 w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
 
-        <div className="2xl:max-w-[90%] flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40">
-          <h1>
+        <div className="flex flex-col px-6 sm:px-10 xl:px-20 pt-32 sm:pt-36 lg:pt-40 h-fit">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className={clsx('', {
+              'lg:text-4xl': height < 1132 && height > 0
+            })}
+          >
             Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu
-          </h1>
+          </motion.h1>
 
-          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-12 gap-y-10">
-            <p className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2">
+          <div
+            ref={underTitleRef}
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-x-8 lg:gap-x-14 w-full mb-12 mt-10 sm:my-10 gap-y-10 overflow-hidden"
+          >
+            <motion.p
+              initial={{ y: -200 }}
+              animate={isUnderTitleRefInView && { y: 0 }}
+              transition={{ type: 'tween', duration: 0.8 }}
+              className="font-light text-xl sm:text-2xl lg:text-3xl col-start-1 col-end-4 md:col-end-2 row-start-1 row-end-2"
+            >
               Zarađuj za život bez da <br className="hidden md:block" /> ti neko
               visi nad glavom!
-            </p>
+            </motion.p>
 
-            <div className="w-full h-[2px] bg-white col-start-1 md:col-start-2 col-end-3 row-start-2 md:row-start-1 row-end-3 md:row-end-2" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={isUnderTitleRefInView && { scaleX: 1 }}
+              transition={{ type: 'tween', duration: 1 }}
+              className="w-full h-[2px] bg-white col-start-1 md:col-start-2 col-end-3 row-start-2 md:row-start-1 row-end-3 md:row-end-2"
+            />
 
             <div className="w-7 h-7 rounded-full border-2 bg-transparent" />
           </div>
 
-          <div className="flex items-center gap-5 mb-16 sm:mb-14">
-            <CtaBtn text="Prijavi se" href="#" />
+          <div className="mb-16 sm:mb-14 flex flex-col gap-2">
+            <motion.b
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="font-xl"
+            >
+              Jednokratno - $297 (cena se uskoro povećava).
+            </motion.b>
 
-            <div className="rounded-full border-2 border-white grid place-items-center w-12 h-12">
-              <SignInIcon />
+            <div className="flex items-center gap-5">
+              <motion.div
+                initial={{ opacity: 0, x: -200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ type: 'spring', stiffness: 45 }}
+                viewport={{ once: true }}
+              >
+                <CtaBtn text="Prijavi se" />
+              </motion.div>
+
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 90, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="rounded-full border-2 border-white grid place-items-center w-12 lg:w-14 h-12 lg:h-14"
+              >
+                <SignInIcon />
+              </motion.div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] gap-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
             <div className="bg-main-purple relative rounded-2xl h-full">
               <div className="pt-8 px-8 flex flex-col gap-2">
                 <p className="font-bold text-2xl xl:text-3xl">
@@ -55,16 +113,27 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="w-fit lg:w-[75%] ml-auto">
-                <Image
-                  src={cart}
-                  alt="korpa"
-                  style={{ objectFit: 'contain' }}
-                />
+              <div
+                ref={cartContainer}
+                className={clsx('w-fit lg:w-[60%] ml-auto overflow-hidden', {
+                  'lg:w-[50%]': height < 1134 && height > 0
+                })}
+              >
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={isCartContainerInView && { x: '0%' }}
+                  transition={{ type: 'spring', stiffness: 40 }}
+                >
+                  <Image
+                    src={cart}
+                    alt="korpa"
+                    style={{ objectFit: 'contain' }}
+                  />
+                </motion.div>
               </div>
             </div>
 
-            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
+            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[14rem] sm:h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-4 sm:py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
               <div className="flex flex-col justify-between items-end font-light">
                 <p>RSD 200K</p>
                 <p>RSD 100K</p>
@@ -74,7 +143,7 @@ const Hero = () => {
               <div className="flex flex-col justify-between relative w-full">
                 <svg
                   width="100%"
-                  height="204"
+                  height={width > 640 ? '204' : '60%'}
                   viewBox="0 0 560 204"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"

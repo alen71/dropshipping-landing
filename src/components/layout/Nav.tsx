@@ -8,16 +8,18 @@ import Logo from '../shared/Logo'
 import CtaBtn from '../shared/CtaBtn'
 
 import UseLocoScroll from '@/store/useLocoScroll'
+import NavPopup from './NavPopup'
+import useTogglePopup from '@/store/useTogglePopup'
 
 type Props = {
   nativeScroll?: boolean
 }
 
 const Nav = ({ nativeScroll }: Props) => {
-  const [isOpen, setIsOpen] = useState(false)
   const [isScroll, setIsScroll] = useState(false)
   const [isScrollTopOfPage, setIsScrollTopOfPage] = useState(true)
   const { locomotiveScroll } = UseLocoScroll()
+  const { isPopupOpen } = useTogglePopup()
 
   useEffect(() => {
     if (nativeScroll) return
@@ -62,8 +64,6 @@ const Nav = ({ nativeScroll }: Props) => {
       let currPageOffset = 0
       let timeoutSet: NodeJS.Timeout | null = null
 
-      console.log('init')
-
       window.addEventListener('scroll', () => {
         const pageOffset = window.scrollY
 
@@ -102,18 +102,24 @@ const Nav = ({ nativeScroll }: Props) => {
         className={clsx(
           'fixed left-0 right-0 top-0 h-20 md:h-[8rem] z-[39] transition-all duration-500',
           {
-            'translate-y-[-130%]': !isScrollTopOfPage && !isScroll && !isOpen,
+            'translate-y-[-130%]':
+              !isScrollTopOfPage && !isScroll && !isPopupOpen,
             ' h-[6rem] mt-0':
-              !isScrollTopOfPage && !isScrollTopOfPage && isScroll && !isOpen,
-            'backdrop-blur-lg': !isScrollTopOfPage && !isOpen,
-            'backdrop-blur-0': isScrollTopOfPage || isOpen
+              !isScrollTopOfPage &&
+              !isScrollTopOfPage &&
+              isScroll &&
+              !isPopupOpen,
+            'backdrop-blur-lg': !isScrollTopOfPage && !isPopupOpen,
+            'backdrop-blur-0': isScrollTopOfPage || isPopupOpen
           }
         )}
       >
         <motion.div
           initial="visible"
           animate={
-            isOpen || (!isScrollTopOfPage && !isScroll) || isScrollTopOfPage
+            isPopupOpen ||
+            (!isScrollTopOfPage && !isScroll) ||
+            isScrollTopOfPage
               ? 'hidden'
               : 'visible'
           }
@@ -136,24 +142,29 @@ const Nav = ({ nativeScroll }: Props) => {
         className={clsx(
           'fixed left-0 right-0 top-0 h-20 md:h-[8rem] transition-all duration-500 z-[41]',
           {
-            'translate-y-[-130%]': !isScrollTopOfPage && !isScroll && !isOpen,
+            'translate-y-[-130%]':
+              !isScrollTopOfPage && !isScroll && !isPopupOpen,
             ' h-[6rem] mt-0':
-              !isScrollTopOfPage && !isScrollTopOfPage && isScroll && !isOpen
+              !isScrollTopOfPage &&
+              !isScrollTopOfPage &&
+              isScroll &&
+              !isPopupOpen
           }
         )}
       >
         <div className="flex items-center justify-between px-6 sm:px-10 xl:px-20 h-full">
-          <div className="scale-[0.8] sm:scale-100 -ml-4 sm:-ml-0">
+          <div className="scale-[0.7] sm:scale-100 -ml-5 sm:-ml-0">
             <Logo />
           </div>
 
           <div className="flex items-center gap-5">
             <div className="w-2 h-2 rounded-full bg-white animate-bounce" />
 
-            <CtaBtn href="/" text="POČNI ODMAH" nav />
+            <CtaBtn text="POČNI ODMAH" nav />
           </div>
         </div>
       </header>
+      <NavPopup />
     </>
   )
 }

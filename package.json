@@ -10,14 +10,12 @@
     "format": "prettier --write \"src/**/*.{js,jsx,tx,tsx}\""
   },
   "dependencies": {
-    "@svgr/webpack": "^8.0.1",
-    "@types/locomotive-scroll": "^4.1.0",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "framer-motion": "^10.12.16",
-    "gsap": "^3.11.5",
+    "gsap": "^3.12.1",
     "locomotive-scroll": "^4.1.4",
     "magnet-mouse": "fluffy-factory/magnet-mouse",
     "next": "13.4.4",
@@ -31,6 +29,8 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
+    "@types/locomotive-scroll": "^4.1.0",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4"

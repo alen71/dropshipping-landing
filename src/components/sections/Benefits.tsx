@@ -1,23 +1,45 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import Image from 'next/image'
+import { motion, useInView } from 'framer-motion'
 
 import MainSection from '../shared/MainSection'
-import AnimatedText from '../shared/AnimatedText'
+import ParagraphAnimation from '../shared/ParagraphAnimation'
 import AnimatedLine from '../shared/AnimatedLine'
 
 import Star from '@/assets/star.svg'
 
 import manOnLaptop from '/public/images/man-work-on.laptop.png'
+import jaroslavOnWall from '/public/images/jaroslav-on-the-wall.jpg'
+
+import AnimatedList from '../shared/AnimatedList'
+import HeadingAnimation from '../shared/HeadingAnimation copy'
+
+const listItems = [
+  'Manja konkurencija.',
+  'Veće profitne marže.',
+  'Ne trebaju ti payment procesori.',
+  'Jednostavnije nego klasičan dropshipping.',
+  'Bez jezičke barijere.'
+]
 
 const Benefits = () => {
+  const imgContainerRef = useRef<HTMLDivElement | null>(null)
+  const isInView = useInView(imgContainerRef, { once: true })
+
   return (
     <MainSection px={0}>
-      <AnimatedText />
-
       <div className="px-6 sm:px-10 xl:px-20">
-        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-14 mt-10 sm:my-14 lg:my-20">
-          Probao si dropshipping ali:
-        </p>
+        <HeadingAnimation>
+          <h2>Da li si ovo ti? Ukoliko se prepoznaješ ova obuka je za tebe!</h2>
+        </HeadingAnimation>
+
+        <ParagraphAnimation margin={50}>
+          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-14 mt-10 sm:mb-14 sm:mt-12 lg:mb-20 lg:mt-16">
+            Probao si dropshipping ali:
+          </p>
+        </ParagraphAnimation>
 
         <AnimatedLine />
 
@@ -32,39 +54,57 @@ const Benefits = () => {
             <li>Nisi znao kako da izabereš pravi proizvod.</li>
           </ul>
           <div className="text-main-purple justify-self-center my-20 lg:my-0">
-            <Star />
+            <div className="animate-spin-slow">
+              <Star />
+            </div>
           </div>
         </div>
         <div className="my-14 lg:my-20">
-          <AnimatedLine />
+          <AnimatedLine direction="right" />
         </div>
 
-        <h3 className="font-semibold mb-10 font-prompt">
-          Za dropshipping na DOMAĆEM TRŽIŠTU ništa od ovoga ti nije potrebno!
-        </h3>
+        <ParagraphAnimation margin={50}>
+          <h3 className="font-semibold mb-10 font-prompt">
+            Za dropshipping na DOMAĆEM TRŽIŠTU ništa od ovoga ti nije potrebno!
+          </h3>
+        </ParagraphAnimation>
 
-        <p className="md:text-2xl xl:text-30xl mb-5 sm:mb-0">
-          Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA
-        </p>
+        <ParagraphAnimation margin={50} delay={0.2}>
+          <p className="md:text-2xl xl:text-30xl mb-5 sm:mb-0">
+            Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA
+          </p>
+        </ParagraphAnimation>
       </div>
 
-      <div className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24">
-        <div className="max-w-[90%] sm:max-w-[70%] xl:max-w-full">
-          <Image src={manOnLaptop} alt="man on laptop" />
-        </div>
+      <div
+        ref={imgContainerRef}
+        className="mt-28 sm:mt-36 md:mt-40 lg:mt-56 flex flex-col xl:flex-row xl:items-center gap-16 sm:gap-24"
+      >
+        <motion.div
+          initial={{ x: '-100%' }}
+          animate={isInView && { x: '0%' }}
+          transition={{ type: 'spring', stiffness: 30 }}
+          className="max-w-[90%] sm:max-w-[70%] max-h-[50rem] xl:max-w-full overflow-hidden rounded-tr-full rounded-br-full"
+        >
+          <Image src={jaroslavOnWall} alt="man on laptop" />
+        </motion.div>
+
         <div className="flex flex-col gap-14 lg:gap-20 xl:pr-24 font-light px-6 sm:px-10 xl:px-0">
-          <h3>Koje su prednosti domaćeg dropshippinga?</h3>
-          <ul className="list-disc flex flex-col gap-3 list-inside">
-            <li>Manja konkurencija.</li>
-            <li>Veće profitne marže.</li>
-            <li>Ne trebaju ti payment procesori.</li>
-            <li>Jednostavnije nego klasičan dropshipping.</li>
-            <li>Bez jezičke barijere.</li>
-          </ul>
-          <p className="sm:text-2xl font-semibold">
-            NE NEĆEŠ POSTATI MILIONER, ALI ĆEŠ IMATI SVOJ SOPSTVENI BIZNIS OD
-            KOG DOBRO ZARADJUJEŠ
-          </p>
+          <HeadingAnimation>
+            <h3>Koje su prednosti domaćeg dropshippinga?</h3>
+          </HeadingAnimation>
+
+          <AnimatedList
+            list={listItems}
+            className="list-disc flex flex-col gap-3 list-inside"
+          />
+
+          <ParagraphAnimation margin={50}>
+            <p className="sm:text-2xl font-semibold">
+              NE NEĆEŠ POSTATI MILIONER, ALI ĆEŠ IMATI SVOJ SOPSTVENI BIZNIS OD
+              KOG DOBRO ZARADJUJEŠ
+            </p>
+          </ParagraphAnimation>
         </div>
       </div>
     </MainSection>
