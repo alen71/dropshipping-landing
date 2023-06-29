@@ -11,6 +11,7 @@ import ParagraphAnimation from '../shared/ParagraphAnimation'
 import PlayIcon from '@/assets/icons/play-video-btn.svg'
 import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
+import UseLocoScroll from '@/store/useLocoScroll'
 
 const listItems = [
   '- Da li je ovo pravi biznis model za tebe?',
@@ -21,6 +22,8 @@ const listItems = [
 ]
 
 const Intro = () => {
+  const { locomotiveScroll } = UseLocoScroll()
+
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlay, setIsPlay] = useState(false)
 
@@ -31,9 +34,9 @@ const Intro = () => {
   }, [videoRef, isPlay])
 
   return (
-    <MainSection>
-      <div className="flex flex-col 2xl:flex-row gap-14 2xl:gap-36 items-center">
-        <div className=" max-w-[40rem]">
+    <MainSection px={0}>
+      <div className="flex flex-col gap-14 items-center md:px-10 xl:px-20">
+        <div className="max-w-[40rem] px-6 sm:px-10 md:px-0">
           <HeadingAnimation>
             <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
           </HeadingAnimation>
@@ -45,27 +48,27 @@ const Intro = () => {
             </p>
           </ParagraphAnimation>
 
-          <AnimatedList
-            list={listItems}
-            className="flex flex-col mb-10 gap-2"
-          />
-
-          <CtaBtn text="Prijavi se" />
+          <AnimatedList list={listItems} className="flex flex-col gap-2" />
         </div>
-        <div className=" w-full h-full relative grid place-items-center rounded-full overflow-hidden">
-          <motion.video
-            ref={videoRef}
+        <div className="h-full relative grid place-items-center md:rounded-full overflow-hidden max-w-[80rem] ">
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ type: 'spring', stiffness: 45 }}
             viewport={{ once: true }}
-            autoPlay
-            playsInline
             className="w-full h-full cursor-pointer"
             onClick={() => setIsPlay(state => !state)}
           >
-            <source src="/Za sajt spremno.mp4" type="video/mp4" />
-          </motion.video>
+            <video
+              ref={videoRef}
+              autoPlay
+              playsInline
+              onLoadedData={() => locomotiveScroll.update()}
+              className="w-full h-auto object-cover"
+            >
+              <source src="/Za sajt spremno.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
 
           <div
             className={clsx('absolute duration-200 pointer-events-none', {
@@ -76,6 +79,7 @@ const Intro = () => {
             <PlayIcon />
           </div>
         </div>
+        <CtaBtn text="Prijavi se" />
       </div>
     </MainSection>
   )

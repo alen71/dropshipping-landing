@@ -14,15 +14,25 @@ import Link from 'next/link'
 const footerNav = [
   {
     el: (
-      <Link target="_blank" href="/politika-privatnosti">
+      <Link
+        target="_blank"
+        href="/politika-privatnosti"
+        className="group relative block overflow-hidden w-fit"
+      >
         Politika privatnosti
+        <div className="absolute bottom-0 left-0 bg-white h-1 w-full translate-x-[-100%] group-hover:translate-x-[100%] duration-500" />
       </Link>
     )
   },
   {
     el: (
-      <Link target="_blank" href="/uslovi-koriscenja">
+      <Link
+        target="_blank"
+        href="/uslovi-koriscenja"
+        className="group relative block overflow-hidden w-fit"
+      >
         Uslovi korišćenja
+        <div className="absolute bottom-0 left-0 bg-white h-1 w-full translate-x-[-100%] group-hover:translate-x-[100%] duration-500" />
       </Link>
     )
   },
@@ -30,7 +40,12 @@ const footerNav = [
     el: (
       <p className="lg:ml-8">
         Sva prava zadržana. Ⓒ 2023{' '}
-        <a href="https://bluestudio.rs" rel="nofollow" target="_blank">
+        <a
+          href="https://bluestudio.rs"
+          rel="nofollow"
+          target="_blank"
+          className="underline"
+        >
           Bluestudio
         </a>
       </p>

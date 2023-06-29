@@ -1,18 +1,18 @@
 'use client'
 
 import React from 'react'
-import MainSection from '../shared/MainSection'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-import review1 from '/public/images/reviews/placeholder.png'
-import review2 from '/public/images/reviews/placeholder.png'
-import review3 from '/public/images/reviews/placeholder.png'
-import review4 from '/public/images/reviews/placeholder.png'
-import review5 from '/public/images/reviews/placeholder.png'
-import review6 from '/public/images/reviews/placeholder.png'
-import Image from 'next/image'
+import review1 from '/public/images/reviews/review-1.png'
+import review2 from '/public/images/reviews/review-2.png'
+import review3 from '/public/images/reviews/review-3.png'
+import review4 from '/public/images/reviews/review-4.png'
+import review5 from '/public/images/reviews/review-5.png'
+import review6 from '/public/images/reviews/review-6.png'
 
 import HeadingAnimation from '../shared/HeadingAnimation copy'
+import MainSection from '../shared/MainSection'
 
 const reviews = [
   {
@@ -57,6 +57,7 @@ const Results = () => {
             <Image
               src={img}
               alt="review screenshot"
+              quality={100}
               style={{ width: '100%' }}
             />
           </motion.div>

@@ -18,6 +18,7 @@ import cardBg4 from '/public/images/cards bg/card-4-bg.png'
 import AnimatedList from '../shared/AnimatedList'
 import HeadingAnimation from '../shared/HeadingAnimation copy'
 import clsx from 'clsx'
+import useTogglePopup from '@/store/useTogglePopup'
 
 const cards = [
   {
@@ -62,9 +63,8 @@ const cards = [
 ]
 
 const WhatWillYouLearn = () => {
+  const { setIsPopupOpen } = useTogglePopup()
   const [isClicked, setIsClicked] = useState('')
-
-  console.log(isClicked)
 
   return (
     <MainSection>
@@ -83,7 +83,6 @@ const WhatWillYouLearn = () => {
             variants={{ init: {}, flip: {} }}
             key={title}
             className="relative z-10 h-full cursor-pointer"
-            style={{ perspective: '1500px' }}
           >
             <motion.div
               initial={{ opacity: 0, y: 100 }}
@@ -91,6 +90,7 @@ const WhatWillYouLearn = () => {
               transition={{ type: 'tween', duration: 0.5 }}
               viewport={{ once: true }}
               className="h-full"
+              style={{ perspective: '1500px' }}
             >
               <motion.article
                 variants={{
@@ -128,6 +128,7 @@ const WhatWillYouLearn = () => {
                   <Image
                     fill
                     src={bg}
+                    quality={100}
                     alt="background"
                     style={{ zIndex: -1 }}
                   />
@@ -142,20 +143,19 @@ const WhatWillYouLearn = () => {
                     transform: 'rotateY(180deg)'
                   }}
                 >
-                  <a
-                    href="https://instagram.com/jaroslav2.0?igshid=OGQ5ZDc2ODk2ZA=="
-                    rel="nofollow"
-                    target="_blank"
+                  <button
                     className=" w-56 lg:w-48 xl:w-72 2xl:w-[27.625rem] h-56 lg:h-48 xl:h-72 2xl:h-[27.625rem] rounded-full border-[3px] border-white grid place-items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200 lg:hover:scale-105"
+                    onClick={() => setIsPopupOpen(true)}
                   >
                     <span className="font-light xl:text-[2.5rem] leading-tight text-center">
                       POČNI ODMAH
                     </span>
-                  </a>
+                  </button>
 
                   <Image
                     fill
                     src={bg}
+                    quality={100}
                     alt="background"
                     style={{ zIndex: -1 }}
                   />
