@@ -3230,10 +3230,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-magnet-mouse@fluffy-factory/magnet-mouse:
-  version "1.0.0"
-  resolved "https://codeload.github.com/fluffy-factory/magnet-mouse/tar.gz/a57706d069552d874eb0689fc640813e2709a2f3"
-
 mdn-data@2.0.28:
   version "2.0.28"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.28.tgz#5ec48e7bef120654539069e1ae4ddc81ca490eba"

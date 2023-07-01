@@ -1,5 +1,3 @@
-'use client'
-
 import { motion, useInView } from 'framer-motion'
 import { StaticImageData } from 'next/image'
 import React, { useRef } from 'react'

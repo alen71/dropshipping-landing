@@ -17,7 +17,6 @@
     "framer-motion": "^10.12.16",
     "gsap": "^3.12.1",
     "locomotive-scroll": "^4.1.4",
-    "magnet-mouse": "fluffy-factory/magnet-mouse",
     "next": "13.4.4",
     "postcss": "8.4.24",
     "prettier": "^2.8.8",

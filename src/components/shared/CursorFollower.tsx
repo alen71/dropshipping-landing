@@ -1,5 +1,3 @@
-'use client'
-
 import { Power2, gsap } from 'gsap'
 import React, { ReactNode, useEffect } from 'react'
 

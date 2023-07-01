@@ -4,6 +4,7 @@ import React from 'react'
 import UseLocoScroll from '@/store/useLocoScroll'
 import useTogglePopup from '@/store/useTogglePopup'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 type Props = {
   href?: string
@@ -14,6 +15,8 @@ type Props = {
 }
 
 const CtaBtn = ({ text, footer, nav, href, className }: Props) => {
+  const { pathname } = useRouter()
+
   const { locomotiveScroll } = UseLocoScroll()
   const { setIsPopupOpen } = useTogglePopup()
 
@@ -46,7 +49,7 @@ const CtaBtn = ({ text, footer, nav, href, className }: Props) => {
           onClick={() => {
             setIsPopupOpen(true)
 
-            locomotiveScroll.stop()
+            pathname === '/' && locomotiveScroll.stop()
 
             document.querySelector('body')?.classList.add('scroll-of')
             document.querySelector('html')?.classList.add('scroll-of')

@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -44,7 +42,7 @@ const Results = () => {
         </HeadingAnimation>
       </div>
 
-      <div className="max-w-[90rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-10 mx-auto">
+      <div className="max-w-[75rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-10 mx-auto">
         {reviews.map(({ img }) => (
           <motion.div
             initial={{ opacity: 0, y: 100 }}

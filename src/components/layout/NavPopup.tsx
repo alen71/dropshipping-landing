@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import InstaIcon from '@/assets/icons/instagram-icon.svg'
 import XIcon from '@/assets/icons/xIcon.svg'
@@ -8,6 +9,8 @@ import useTogglePopup from '@/store/useTogglePopup'
 import UseLocoScroll from '@/store/useLocoScroll'
 
 const NavPopup = () => {
+  const { pathname } = useRouter()
+
   const { locomotiveScroll } = UseLocoScroll()
   const { isPopupOpen, setIsPopupOpen } = useTogglePopup()
 
@@ -31,7 +34,7 @@ const NavPopup = () => {
         className="grid place-items-center bg-black/80 w-full h-full"
         onClick={() => {
           setIsPopupOpen(false)
-          locomotiveScroll.start()
+          pathname === '/' && locomotiveScroll.start()
 
           document.querySelector('body')?.classList.remove('scroll-of')
           document.querySelector('html')?.classList.remove('scroll-of')
