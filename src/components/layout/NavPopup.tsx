@@ -66,7 +66,7 @@ const NavPopup = () => {
               <XIcon />
             </div>
 
-            <h3>PRIJAVI SE NA KURS</h3>
+            <h3>PRIJAVI SE NA OBUKU</h3>
             <p className="max-w-[40rem] text-base sm:text-xl text-center">
               Cena obuke je $297, plaća se jednokratno, i imaš lifetime pristup
               + mentorstvo od mene. Ako si ozbiljan i želiš da počneš da

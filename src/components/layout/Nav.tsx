@@ -155,7 +155,7 @@ const Nav = ({ nativeScroll }: Props) => {
             <Logo />
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 sm:gap-5">
             <div className="w-2 h-2 rounded-full bg-white animate-bounce" />
 
             <CtaBtn text="POČNI ODMAH" nav />

@@ -111,7 +111,7 @@ const Hero = () => {
 
               <div
                 ref={cartContainer}
-                className="w-fit lg:w-[60%] ml-auto overflow-hidden"
+                className="w-[50%] sm:w-fit lg:w-[60%] ml-auto overflow-hidden"
               >
                 <motion.div
                   initial={{ x: '100%' }}
