@@ -98,7 +98,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 max-h-full lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[20rem_auto] xl:grid-cols-[25rem_auto] items-center gap-x-6 xl:gap-x-10 2xl:gap-x-20 max-h-fit lg:max-h-[22.625rem] max-w-[90rem] gap-y-10">
             <div className="bg-main-purple relative rounded-2xl h-fit lg:h-full">
               <div className="pt-8 px-8 flex flex-col gap-2">
                 <p className="font-bold text-2xl xl:text-3xl">
