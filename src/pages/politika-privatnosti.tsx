@@ -2,7 +2,7 @@ import PageLayout from '@/components/layout/PageLayout'
 
 export default function PrivacyPolicy() {
   return (
-    <PageLayout nativeScroll>
+    <PageLayout title="" desc="" nativeScroll>
       <section className="pt-32 sm:pt-36 lg:pt-40 mb-28 sm:mb-36 md:mb-40 lg:mb-56 max-w-[70rem] mx-auto px-6 sm:px-10">
         <h1 className="mb-10">Politika privatnosti</h1>
         <p>

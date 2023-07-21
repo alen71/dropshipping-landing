@@ -14,7 +14,10 @@ import Faq from '@/components/sections/Faq'
 export default function Home() {
   return (
     <LocoScrollWrapper>
-      <PageLayout>
+      <PageLayout
+        title="ECOM škola"
+        desc="Prestani da radiš za gazdu, nauči da prodaješ na domaćem tržištu"
+      >
         <Hero />
 
         <Intro />

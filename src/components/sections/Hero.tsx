@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <MainSection px={0} className="min-h-screen">
       <div id="hero" className="relative md:h-full flex items-center">
-        <div className="absolute top-0 right-0 w-1/2 z-[-1]">
+        <div className="absolute top-0 right-0 w-full sm:w-1/2 z-[-1]">
           <Image src={bgImage} alt="background-image" />
         </div>
 

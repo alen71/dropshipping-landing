@@ -35,9 +35,12 @@ const footerNav = [
     )
   },
   {
+    el: <p className="lg:ml-8">Sva prava zadržana. Ⓒ 2023 ECOM Škola</p>
+  },
+  {
     el: (
       <p className="lg:ml-8">
-        Sva prava zadržana. Ⓒ 2023{' '}
+        Dizajn i development:{' '}
         <a
           href="https://bluestudio.rs"
           rel="nofollow"
@@ -108,7 +111,7 @@ const Footer = () => {
 
         <AnimatedLine />
 
-        <div className="flex flex-col sm:flex-row items-center gap-5 mt-10 sm:mt-14 text-base lg:text-xl">
+        <div className="flex flex-col lg:flex-row items-center gap-5 mt-10 sm:mt-14 text-base lg:text-xl">
           {footerNav.map(({ el }, i) => (
             <motion.div
               key={i}
