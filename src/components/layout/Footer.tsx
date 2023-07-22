@@ -35,7 +35,11 @@ const footerNav = [
     )
   },
   {
-    el: <p className="lg:ml-8">Sva prava zadržana. Ⓒ 2023 ECOM Škola</p>
+    el: (
+      <p className="lg:ml-8 text-center">
+        Sva prava zadržana. Ⓒ 2023 ECOM Škola
+      </p>
+    )
   },
   {
     el: (
