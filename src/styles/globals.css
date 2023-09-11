@@ -12,14 +12,14 @@ body {
 
 h1 {
   font-family: theme(fontFamily.kinetica);
-  font-size: theme(fontSize.6xl);
+  font-size: theme(fontSize.5xl);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 h2 {
   font-family: theme(fontFamily.kinetica);
-  font-size: theme(fontSize.5xl);
+  font-size: theme(fontSize.4xl);
   font-weight: 700;
 }
 
@@ -41,7 +41,7 @@ h4 {
   overflow: hidden;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1536px) {
   body {
     font-size: theme(fontSize.2xl);
   }

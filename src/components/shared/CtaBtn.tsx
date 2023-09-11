@@ -30,7 +30,7 @@ const CtaBtn = ({ text, footer, nav, href, className }: Props) => {
             {
               'text-xs sm:text-base lg:text-xl': nav,
               'text-xl lg:text-30xl': !nav && !footer,
-              'text-sm sm:text-2xl 2xl:text-3xl': footer
+              'text-sm sm:text-xl 2xl:text-2xl': footer
             }
           )}
         >

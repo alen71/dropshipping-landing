@@ -73,7 +73,7 @@ const WhatWillYouLearn = () => {
           </h2>
         </HeadingAnimation>
       </div>
-      <div className="grid md:grid-cols-2 gap-6 xl:gap-10 mx-auto max-w-[90rem]">
+      <div className="grid md:grid-cols-2 gap-6 xl:gap-10 mx-auto max-w-[75rem]">
         {cards.map(({ title, list, icon, bg }, i) => (
           <motion.div
             initial="init"
@@ -110,12 +110,12 @@ const WhatWillYouLearn = () => {
                   )}
                   style={{ backfaceVisibility: 'hidden' }}
                 >
-                  <p className="text-30xl lg:text-4xl xl:text-[3.125rem] leading-tight">
+                  <p className="text-30xl lg:text-4xl 2xl:text-5xl leading-tight">
                     {title}
                   </p>
                   <AnimatedList
                     list={list}
-                    className="font-light text-base sm:text-xl lg:text-2xl flex flex-col gap-4 list-disc 
+                    className="font-light text-base sm:text-xl 2xl:text-2xl flex flex-col gap-4 list-disc 
                   ml-4 sm:ml-6"
                   />
 

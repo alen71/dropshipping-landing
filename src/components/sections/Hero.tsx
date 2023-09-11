@@ -74,7 +74,7 @@ const Hero = () => {
               viewport={{ once: true }}
               className="font-xl mb-10"
             >
-              Jednokratno - $297 (cena se uskoro povećava).
+              Jednokratno $500 + 100$ mesečno.
             </motion.b>
 
             <div ref={buttonRef} className="flex items-center gap-5">
@@ -127,7 +127,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[14rem] sm:h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-4 sm:py-9 color-white text-[0.625rem] sm:text-sm md:text-xl relative">
+            <div className="grid grid-cols-[auto_1fr] gap-x-4 h-[14rem] sm:h-[25rem] lg:h-full w-full border-2 rounded-2xl px-4 sm:px-8 2xl:px-12 py-4 sm:py-9 color-white text-[0.625rem] sm:text-sm md:text-base relative">
               <div className="flex flex-col justify-between items-end font-light">
                 <p>RSD 200K</p>
                 <p>RSD 100K</p>

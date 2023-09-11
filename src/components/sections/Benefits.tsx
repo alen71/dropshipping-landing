@@ -34,14 +34,14 @@ const Benefits = () => {
         </HeadingAnimation>
 
         <ParagraphAnimation margin={50}>
-          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-14 mt-10 sm:mb-14 sm:mt-12 lg:mb-20 lg:mt-16">
+          <p className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-light mb-14 mt-10 sm:mb-14 sm:mt-12 lg:mb-20 lg:mt-16">
             Probao si dropshipping ali:
           </p>
         </ParagraphAnimation>
 
         <AnimatedLine />
 
-        <div className="grid lg:grid-cols-[1fr_1fr_auto] mt-14 lg:mt-20 font-medium gap-5 2xl:gap-10 text-lg lg:text-2xl xl:text-30xl justify-center md:justify-start">
+        <div className="grid lg:grid-cols-[1fr_1fr_auto] mt-14 lg:mt-20 font-medium gap-5 2xl:gap-10 text-lg lg:text-2xl 2xl:text-30xl justify-center md:justify-start">
           <ul className="list-disc flex flex-col gap-6 sm:gap-11 ml-7 ">
             <li>Banovali su ti Facebook account.</li>
             <li>Nisi mogao da namestis Stripe i Paypal.</li>
@@ -68,7 +68,7 @@ const Benefits = () => {
         </ParagraphAnimation>
 
         <ParagraphAnimation margin={50} delay={0.2}>
-          <p className="md:text-2xl xl:text-30xl mb-5 sm:mb-0">
+          <p className="md:text-2xl 2xl:text-30xl mb-5 sm:mb-0">
             Naučiću te kako da iskoristiš prednost DOMAĆEG TERENA
           </p>
         </ParagraphAnimation>

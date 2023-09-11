@@ -42,7 +42,7 @@ const Results = () => {
         </HeadingAnimation>
       </div>
 
-      <div className="max-w-[75rem] grid md:grid-cols-2 2xl:grid-cols-3 gap-6 sm:gap-10 mx-auto">
+      <div className="max-w-[75rem] grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 mx-auto">
         {reviews.map(({ img }) => (
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -50,7 +50,7 @@ const Results = () => {
             transition={{ type: 'tween', duration: 0.5 }}
             viewport={{ once: true }}
             key={img.src}
-            className="w-full h-full"
+            className="w-[85%] sm:w-full h-full mx-auto sm:mx-0"
           >
             <Image
               src={img}

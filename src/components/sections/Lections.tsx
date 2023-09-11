@@ -94,7 +94,7 @@ const Lections = () => {
         ))}
       </div>
 
-      <div className="text-center mt-28 sm:mt-36 md:mt-40 lg:mt-56 mx-auto max-w-[70rem] px-10 sm:px-10 flex flex-col gap-14">
+      <div className="text-center mt-28 sm:mt-36 md:mt-40 lg:mt-56 mx-auto max-w-[60rem] px-10 sm:px-10 flex flex-col gap-14">
         <div ref={titleContainerRef} className="overflow-hidden">
           <motion.h2
             initial={{ y: -100, rotate: -10 }}
