@@ -67,11 +67,18 @@ const NavPopup = () => {
             </div>
 
             <h3>PRIJAVI SE NA OBUKU</h3>
-            <p className="max-w-[40rem] text-base sm:text-xl text-center">
-              Cena obuke je $297, plaća se jednokratno, i imaš lifetime pristup
-              + mentorstvo od mene. Ako si ozbiljan i želiš da počneš da
-              zarađuješ pošalji mi <b>poruku na Instagramu</b> da se dogovorimo
-              oko detalja.
+            <p className="max-w-[40rem] text-base sm:text-xl">
+              Cena obuke je $500 za prvi mesec, svaki sledeći mesec se plaća
+              dodatnih $100. U cenu je uključeno: <br /> <br />
+              1. Neograničeno mentorstvo sa mnom 1 na 1, <br />
+              2. Pristup STEP BY STEP videima, <br />
+              3. Zatvorenoj VIP grupi, <br />
+              4. Platforma za pronalaženje winning proizvoda - Ecominventor,
+              <br />
+              5. Garancija od 7 dana za povraćaj novca. <br /> <br />
+              ako nisi zadovoljan Ako si ozbiljan i želiš da počneš da
+              zaradjuješ pošalji mi poruku na instagramu da se dogovorimo oko
+              detalja.
             </p>
 
             <a
