@@ -17,11 +17,11 @@ const Helmet = ({ children, desc, title }: Props) => {
         <meta content={desc} property="og:description" />
         <meta
           property="og:image"
-          content="https://ecominventor.com/images/prev-logo.png"
+          content="https://ecomskola.com/images/prev-logo.png"
         />
 
         <meta content="website" property="og:type" />
-        <meta content="https://ecominventor.com" property="og:url" />
+        <meta content="https://ecomskola.com" property="og:url" />
 
         <meta content="ECOM škola" property="og:site_name" />
 
