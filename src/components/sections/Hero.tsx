@@ -74,7 +74,7 @@ const Hero = () => {
               viewport={{ once: true }}
               className="font-xl mb-10"
             >
-              Jednokratno $500 + 100$ mesečno.
+              Jednokratno $1490.
             </motion.b>
 
             <div ref={buttonRef} className="flex items-center gap-5">
