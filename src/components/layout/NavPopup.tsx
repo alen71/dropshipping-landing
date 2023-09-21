@@ -77,8 +77,8 @@ const NavPopup = () => {
               <br />
               5. Pristup proizvodima koji niko neće moći da prodaje sem tebe.
               (uvoz iz Kine) <br />
-              6. Garancija od 7 dana za povraćaj novca. <br /> <br />
-              ako nisi zadovoljan Ako si ozbiljan i želiš da počneš da
+              6. Garancija od 7 dana za povraćaj novca ako nisi zadovoljan. <br /> <br />
+              Ako si ozbiljan i želiš da počneš da
               zaradjuješ pošalji mi poruku na instagramu da se dogovorimo oko
               detalja.
             </p>
