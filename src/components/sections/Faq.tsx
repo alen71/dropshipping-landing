@@ -14,7 +14,7 @@ const qa = [
   {
     question: 'Koliko para mi je potrebno da počnem?',
     answer:
-      '- Posle kupovine obuke ($297) bilo bi dobro da imaš još najmanje $200 za reklamiranje i dodatne troškove. (što više to bolje)'
+      '- Posle kupovine obuke ($1490) bilo bi dobro da imaš još najmanje $200 za reklamiranje i dodatne troškove. (što više to bolje)'
   },
   {
     question: 'Zašto ti učiš ljude i stvaraš sebi konkurenciju?',
