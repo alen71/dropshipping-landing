@@ -57,7 +57,8 @@ const Benefits = () => {
             </div>
           </div>
         </div>
-        <div className="my-14 lg:my-20">
+
+        <div className="mb-14 mt-5 lg:my-20">
           <AnimatedLine direction="right" />
         </div>
 

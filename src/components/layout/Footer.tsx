@@ -15,7 +15,7 @@ const footerNav = [
       <Link
         target="_blank"
         href="/politika-privatnosti"
-        className="group relative block overflow-hidden w-fit"
+        className="group relative block overflow-hidden w-fit text-sm sm:text-base"
       >
         Politika privatnosti
         <div className="absolute bottom-0 left-0 bg-white h-1 w-full translate-x-[-100%] group-hover:translate-x-[100%] duration-500" />
@@ -27,7 +27,7 @@ const footerNav = [
       <Link
         target="_blank"
         href="/uslovi-koriscenja"
-        className="group relative block overflow-hidden w-fit"
+        className="group relative block overflow-hidden w-fit text-sm sm:text-base"
       >
         Uslovi korišćenja
         <div className="absolute bottom-0 left-0 bg-white h-1 w-full translate-x-[-100%] group-hover:translate-x-[100%] duration-500" />
@@ -36,7 +36,7 @@ const footerNav = [
   },
   {
     el: (
-      <p className="lg:ml-8 text-center">
+      <p className="lg:ml-8 text-center text-sm sm:text-base">
         Sva prava zadržana. Ⓒ 2023 ECOM Škola
       </p>
     )

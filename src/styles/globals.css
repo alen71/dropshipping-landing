@@ -78,17 +78,17 @@ h4 {
     font-size: theme(fontSize.lg);
   }
   h1 {
-    font-size: theme(fontSize.30xl);
-  }
-
-  h2 {
     font-size: theme(fontSize.2xl);
   }
 
-  h3 {
+  h2 {
     font-size: theme(fontSize.xl);
   }
-  h4 {
+
+  h3 {
     font-size: theme(fontSize.lg);
+  }
+  h4 {
+    font-size: theme(fontSize.base);
   }
 }

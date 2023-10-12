@@ -36,7 +36,7 @@ const Intro = () => {
   return (
     <>
       <MainSection px={0} className="">
-        <div className="grid 2xl:grid-cols-2  gap-24 items-center md:px-10 xl:px-20">
+        <div className="grid 2xl:grid-cols-2 gap-14 lg:gap-24 items-center md:px-10 xl:px-20">
           <div
             className={clsx('px-6 sm:px-10 md:px-0 duration-300', {
               '2xl:blur-md': isPlay
@@ -95,7 +95,10 @@ const Intro = () => {
             </motion.div>
           </div>
 
-          <CtaBtn text="Prijavi se" className="2xl:hidden" />
+          <CtaBtn
+            text="Prijavi se"
+            className="2xl:hidden justify-self-center lg:justify-self-start"
+          />
         </div>
       </MainSection>
       <AnimatePresence>
