@@ -59,10 +59,10 @@ const Faq = () => {
   const [openedQ, setOpenedQ] = useState<string | null>(null)
 
   return (
-    <MainSection>
+    <MainSection className="relative z-10">
       <div
         ref={titleContainerRef}
-        className="flex items-center justify-between gap-10 overflow-hidden relative z-10"
+        className="flex items-center justify-between gap-10 overflow-hidden"
       >
         <motion.h2
           initial={{ y: -200, rotate: -10 }}

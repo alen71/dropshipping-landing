@@ -62,7 +62,7 @@ const Footer = () => {
   return (
     <footer
       data-scroll-section
-      className="px-6 sm:px-10 xl:px-20 relative pb-10 sm:pb-14 xl:pb-20 z-[-1]"
+      className="px-6 sm:px-10 xl:px-20 relative pb-10 sm:pb-14 xl:pb-20"
     >
       <div className="absolute right-0 bottom-0 w-full sm:w-1/2 z-[-1]  overflow-hidden">
         <motion.div
