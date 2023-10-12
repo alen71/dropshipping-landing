@@ -62,7 +62,7 @@ const Faq = () => {
     <MainSection>
       <div
         ref={titleContainerRef}
-        className="flex items-center justify-between gap-10 overflow-hidden"
+        className="flex items-center justify-between gap-10 overflow-hidden relative z-10"
       >
         <motion.h2
           initial={{ y: -200, rotate: -10 }}

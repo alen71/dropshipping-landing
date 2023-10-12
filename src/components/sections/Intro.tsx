@@ -33,7 +33,7 @@ const Intro = () => {
 
   return (
     <MainSection px={0}>
-      <div className="flex flex-col gap-14 items-center md:px-10 xl:px-20">
+      <div className="flex flex-col gap-24 items-center md:px-10 xl:px-20">
         <div className="max-w-[40rem] px-6 sm:px-10 md:px-0">
           <HeadingAnimation>
             <h3>Obavezno pogledaj video pre nego što nastaviš dalje!</h3>
@@ -48,6 +48,7 @@ const Intro = () => {
 
           <AnimatedList list={listItems} className="flex flex-col gap-2" />
         </div>
+
         <div className="h-full relative grid place-items-center md:rounded-full overflow-hidden max-w-[80rem] ">
           <motion.div
             initial={{ opacity: 0 }}
@@ -77,6 +78,7 @@ const Intro = () => {
             <PlayIcon />
           </div>
         </div>
+
         <CtaBtn text="Prijavi se" />
       </div>
     </MainSection>
